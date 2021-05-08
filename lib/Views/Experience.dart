@@ -68,7 +68,7 @@ class _ExperienceState extends State<Experience> {
                           CompanyLogoPath:
                               'assets/images/digitalgriendlogo.png',
                           CompanyName: "Digital Friend",
-                          WorkDescription: "I work as a Full Stack Flutter Developer as an intern in Digital Friend.",
+                          WorkDescription: "I work as a Full Stack Flutter Developer(as an intern) in Digital Friend.",
                           WorkDescriptionForMobile: "I work as a Full Stack Flutter Developer \nas an intern in Digital Friend.",
                           WorkDuration: "Apr,2021 - Present",
                         );
