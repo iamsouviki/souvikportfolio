@@ -1,16 +1,16 @@
-# souvikportfolio
+## Souvik Portfolio
 
-My Own PortFolio , made and Design by Souvik
+My Own Responsive portfolio using Flutter Web.
 
-## Getting Started
+Portfolio link :- https://souvikportfolio.web.app
 
-This project is a starting point for a Flutter application.
+#To Edit this just edit 'Variable.dart' details and follow this link for hosting
 
-A few resources to get you started if this is your first Flutter project:
+https://medium.com/swlh/firebase-hosting-and-automatic-deployment-with-github-actions-for-flutter-web-7713b00fb620
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+##SCREENSHOT
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot from 2021-05-09 02-25-26](https://user-images.githubusercontent.com/47409900/117553233-e8e24980-b06d-11eb-8822-c8e29424880a.png)
+
+![Screenshot_2021-05-09-02-24-57-467_com android chrome](https://user-images.githubusercontent.com/47409900/117553246-00213700-b06e-11eb-9fc9-7f3ff58325cd.jpg)
+
