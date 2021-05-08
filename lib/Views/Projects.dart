@@ -93,7 +93,7 @@ class _ProjectsState extends State<Projects> {
                           SecondTechnology: ', DART ',
                           ThirdTechnology: ', FIREBASE ',
                           ForthTechnology: ', GITHUB',
-                          ProjectUrl: "https://github.com/iamsouviki/souvik_portfolio_flutter_web",
+                          ProjectUrl: "https://github.com/iamsouviki/souvikportfolio",
                         );
                       }
                       return Container();
