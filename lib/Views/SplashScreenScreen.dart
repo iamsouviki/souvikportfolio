@@ -38,7 +38,7 @@ class _SplashScreenScreenState extends State<SplashScreenScreen> {
                 size: 30,
               ),
               Text(
-                "Stealing Your Data",
+                "Stealing Your Data  😉",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 17,

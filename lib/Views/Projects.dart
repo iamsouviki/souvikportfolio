@@ -71,7 +71,7 @@ class _ProjectsState extends State<Projects> {
                           FirstTechnology: 'ANDROID ',
                           SecondTechnology: ' , JAVA ',
                           ThirdTechnology: ' , XML ',
-                          ForthTechnology: ' , REST API',
+                          ForthTechnology: ' , REST API (Retrofit)',
                           ProjectUrl: "https://github.com/iamsouviki/Read-Write-and-Share",
                         );
                       }
