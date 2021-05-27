@@ -85,6 +85,27 @@ class _ProjectsState extends State<Projects> {
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ProjectAdapter(
+                          ProjectName: "Tic Tac Toe",
+                          ProjectLogoPath: '',
+                          ProjectDescription: "'Tic Tac Toe' is a flutter application using BackTracking MinMax Algorithm .\n Here We can play with computer as well as human .",
+                          ProjectDescriptionForMobile: "'Tic Tac Toe' is a flutter application using BackTracking MinMax Algorithm .\n Here We can play with computer as well as human .",
+                          FirstTechnology: ' Flutter ',
+                          SecondTechnology: ' , Algorithm (BackTrcking Minmax) ',
+                          ThirdTechnology: ' , Dart',
+                          ForthTechnology: ' , Github  , Firebase',
+                          ProjectUrl: "https://github.com/iamsouviki/tictactoe_game",
+                        );
+                      }
+                      return Container();
+                    }),
+                SizedBox(
+                  height: 12,
+                ),
+                FutureBuilder(
+                    future: count(4),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return ProjectAdapter(
                           ProjectName: "My Portfolio",
                           ProjectLogoPath: '',
                           ProjectDescription: "'My Portfolio' is a flutter web application . Its just a web resume",
@@ -102,7 +123,7 @@ class _ProjectsState extends State<Projects> {
                   height: 12,
                 ),
                 FutureBuilder(
-                    future: count(4),
+                    future: count(5),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ProjectAdapter(
