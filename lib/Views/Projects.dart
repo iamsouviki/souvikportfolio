@@ -140,6 +140,7 @@ class _ProjectsState extends State<Projects> {
                       }
                       return Container();
                     }),
+                SizedBox(height: 70,)
               ],
             ),
           ),
