@@ -1,21 +1,21 @@
 {
-    "name": "souvikportfolio",
-    "short_name": "souvikportfolio",
+    "name": "Souvik Ghosh",
+    "short_name": "Souvik Ghosh",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Souvik Ghosh Portfolio",
+    "description": "Souvik's Portfolio",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "icons/souvik.png",
+            "src": "icons/Icon-192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "icons/souvik.png",
+            "src": "icons/Icon-512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
