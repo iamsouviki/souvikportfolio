@@ -139,7 +139,7 @@ class _IntroDuctionAnimationTextAdapterState
                         style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
                       onPressed: (){
-                        launch("https://drive.google.com/file/d/14PDSpYvsTXCk3117z0C-eyhaOwFG1JOV/view?usp=sharing");
+                        launch("https://drive.google.com/file/d/1VoUkdWeccwntgGrs-tFTj8VNGqpQmYPl/view?usp=sharing");
                       },
                     ),
                   );
