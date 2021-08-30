@@ -60,23 +60,23 @@ class _ExperienceState extends State<Experience> {
                 SizedBox(
                   height: 15,
                 ),
+                // FutureBuilder(
+                //     future: count(2),
+                //     builder: (context, snapshot) {
+                //       if (snapshot.connectionState == ConnectionState.done) {
+                //         return ExperienceAdapter(
+                //           CompanyLogoPath: 'assets/images/tcslogo.jpeg',
+                //           CompanyName: "TATA Consultancy Services(TCS)",
+                //           WorkDescription: "Assistant System Engineer-Trainee",
+                //           WorkDescriptionForMobile:
+                //               "Assistant System Engineer-Trainee",
+                //           WorkDuration: "Oct,2021 - Present",
+                //         );
+                //       }
+                //       return Container();
+                //     }),
                 FutureBuilder(
                     future: count(2),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return ExperienceAdapter(
-                          CompanyLogoPath: 'assets/images/tcslogo.jpeg',
-                          CompanyName: "TATA Consultancy Services(TCS)",
-                          WorkDescription: "Assistant System Engineer-Trainee",
-                          WorkDescriptionForMobile:
-                              "Assistant System Engineer-Trainee",
-                          WorkDuration: "Oct,2021 - Present",
-                        );
-                      }
-                      return Container();
-                    }),
-                FutureBuilder(
-                    future: count(4),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ExperienceAdapter(
@@ -91,7 +91,7 @@ class _ExperienceState extends State<Experience> {
                       return Container();
                     }),
                 FutureBuilder(
-                    future: count(6),
+                    future: count(4),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ExperienceAdapter(
