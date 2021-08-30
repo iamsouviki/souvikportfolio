@@ -65,6 +65,21 @@ class _ExperienceState extends State<Experience> {
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ExperienceAdapter(
+                          CompanyLogoPath: 'assets/images/tcslogo.jpeg',
+                          CompanyName: "TATA Consultancy Services(TCS)",
+                          WorkDescription: "Assistant System Engineer-Trainee",
+                          WorkDescriptionForMobile:
+                              "Assistant System Engineer-Trainee",
+                          WorkDuration: "Oct,2021 - Present",
+                        );
+                      }
+                      return Container();
+                    }),
+                FutureBuilder(
+                    future: count(4),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return ExperienceAdapter(
                           CompanyLogoPath: 'assets/images/qworkzLOGO.jpeg',
                           CompanyName: "Qworkz Technology Solutions",
                           WorkDescription: "Mobile Application Developer",
@@ -76,7 +91,7 @@ class _ExperienceState extends State<Experience> {
                       return Container();
                     }),
                 FutureBuilder(
-                    future: count(2),
+                    future: count(6),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ExperienceAdapter(
