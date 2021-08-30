@@ -65,16 +65,33 @@ class _ExperienceState extends State<Experience> {
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ExperienceAdapter(
-                          CompanyLogoPath:
-                              'assets/images/digitalgriendlogo.png',
-                          CompanyName: "Digital Friend",
-                          WorkDescription: "I work as a Full Stack Flutter Developer(as an intern) in Digital Friend.",
-                          WorkDescriptionForMobile: "I work as a Full Stack Flutter Developer \nas an intern in Digital Friend.",
-                          WorkDuration: "Apr,2021 - Present",
+                          CompanyLogoPath: 'assets/images/qworkzLOGO.jpeg',
+                          CompanyName: "Qworkz Technology Solutions",
+                          WorkDescription: "Mobile Application Developer",
+                          WorkDescriptionForMobile:
+                              "Mobile Application Developer",
+                          WorkDuration: "May,2021 - Present",
                         );
                       }
                       return Container();
-                    })
+                    }),
+                FutureBuilder(
+                    future: count(2),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return ExperienceAdapter(
+                          CompanyLogoPath:
+                              'assets/images/digitalgriendlogo.png',
+                          CompanyName: "Digital Friend",
+                          WorkDescription:
+                              "Full Stack Flutter Developer(as an intern)",
+                          WorkDescriptionForMobile:
+                              "Full Stack Flutter Developer(as an intern).",
+                          WorkDuration: "Apr,2021 - Oct,2021",
+                        );
+                      }
+                      return Container();
+                    }),
               ],
             ),
           ),
