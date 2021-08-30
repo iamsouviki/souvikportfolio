@@ -66,7 +66,7 @@ class _ExperienceState extends State<Experience> {
                 //       if (snapshot.connectionState == ConnectionState.done) {
                 //         return ExperienceAdapter(
                 //           CompanyLogoPath: 'assets/images/tcslogo.jpeg',
-                //           CompanyName: "TATA Consultancy Services(TCS)",
+                //           CompanyName: "Tata Consultancy Services(TCS)",
                 //           WorkDescription: "Assistant System Engineer-Trainee",
                 //           WorkDescriptionForMobile:
                 //               "Assistant System Engineer-Trainee",
