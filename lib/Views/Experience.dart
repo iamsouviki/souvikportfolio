@@ -85,7 +85,7 @@ class _ExperienceState extends State<Experience> {
                           WorkDescription: "Mobile Application Developer",
                           WorkDescriptionForMobile:
                               "Mobile Application Developer",
-                          WorkDuration: "May,2021 - Present",
+                          WorkDuration: "May,2021 - Oct,2021",
                         );
                       }
                       return Container();

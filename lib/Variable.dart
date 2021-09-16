@@ -10,7 +10,7 @@ const String FACEBOOK_URL = "https://fb.com/iamsouviki";
 const String NAME = "Souvik Ghosh";
 const String PROFESSION_DETAILS = 'Computer Science Graduate';
 const String MORE_DETAILS_INTRODUCTION =
-    "I love to build neat, cool and scalable application and I'm an aspiring TCSER.\n"
+    "I love to build neat, cool and scalable application.\n"
     'I love to learn and build new stuff that are beneficial to the community and cool to work on.\n'
     'I also have great interest in the open source community.';
 
