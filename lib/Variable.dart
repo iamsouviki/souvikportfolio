@@ -9,7 +9,7 @@ const String FACEBOOK_URL = "https://fb.com/iamsouviki";
 //INTRODUCTION PAGE VARIABLE
 const String NAME = "Souvik Ghosh";
 const String PROFESSION_DETAILS =
-    'Computer Science Graduate and Assistant System Engineer(Trainee) in TCS';
+    'Computer Science Graduate and Assistant System Engineer(Trainee) in Tata Consultancy Services(TCS)';
 const String MORE_DETAILS_INTRODUCTION =
     "I love to build neat, cool and scalable application.\n"
     'I love to learn and build new stuff that are beneficial to the community and cool to work on.\n'
@@ -20,7 +20,7 @@ const String IMAGE_PATH = 'assets/images/souvikimagepassport.jpg';
 
 //ABOUT ME SECTION
 const String WHO_AM_I =
-    "Hello! I'm Souvik Ghosh , a Computer Science Graduate and flutter developer Developer.\n"
+    "Hello! I'm Souvik Ghosh , a Computer Science Graduate, Flutter developer Developer and Assistant System Engineer(Trainee) in Tata Consultancy Services(TCS).\n"
     'I love to create performant and interesting stuff that are benificial to the community. I enjoy learning and exploring new areas in the technologies. \nIn my opinion,'
     'getting your hands dirty is the best way to learn a new skill.\n'
     'My area of interest are Cross Platform Application Development , Android Application Development and Full Stack Development\n'

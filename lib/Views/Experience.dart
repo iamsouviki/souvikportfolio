@@ -82,9 +82,10 @@ class _ExperienceState extends State<Experience> {
                         return ExperienceAdapter(
                           CompanyLogoPath: 'assets/images/qworkzLOGO.jpeg',
                           CompanyName: "Qworkz Technology Solutions",
-                          WorkDescription: "Mobile Application Developer",
+                          WorkDescription:
+                              "Mobile Application Developer(Intern + Full Time)",
                           WorkDescriptionForMobile:
-                              "Mobile Application Developer",
+                              "Mobile Application Developer(Intern + Full Time)",
                           WorkDuration: "May,2021 - Sep,2021",
                         );
                       }
@@ -98,8 +99,7 @@ class _ExperienceState extends State<Experience> {
                           CompanyLogoPath:
                               'assets/images/digitalgriendlogo.png',
                           CompanyName: "Digital Friend",
-                          WorkDescription:
-                              "Full Stack Flutter Developer(as an intern)",
+                          WorkDescription: "Flutter Developer(Intern)",
                           WorkDescriptionForMobile:
                               "Flutter Developer(Intern).",
                           WorkDuration: "Apr,2021 - Sep,2021",
