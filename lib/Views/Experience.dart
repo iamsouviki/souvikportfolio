@@ -70,7 +70,7 @@ class _ExperienceState extends State<Experience> {
                           WorkDescription: "Assistant System Engineer-Trainee",
                           WorkDescriptionForMobile:
                               "Assistant System Engineer-Trainee",
-                          WorkDuration: "Starting from October 1",
+                          WorkDuration: "Oct 1 - Present",
                         );
                       }
                       return Container();
@@ -85,7 +85,7 @@ class _ExperienceState extends State<Experience> {
                           WorkDescription: "Mobile Application Developer",
                           WorkDescriptionForMobile:
                               "Mobile Application Developer",
-                          WorkDuration: "May,2021 - Oct,2021",
+                          WorkDuration: "May,2021 - Sep,2021",
                         );
                       }
                       return Container();
@@ -101,8 +101,8 @@ class _ExperienceState extends State<Experience> {
                           WorkDescription:
                               "Full Stack Flutter Developer(as an intern)",
                           WorkDescriptionForMobile:
-                              "Full Stack Flutter Developer(as an intern).",
-                          WorkDuration: "Apr,2021 - Oct,2021",
+                              "Flutter Developer(Intern).",
+                          WorkDuration: "Apr,2021 - Sep,2021",
                         );
                       }
                       return Container();

@@ -8,7 +8,8 @@ const String FACEBOOK_URL = "https://fb.com/iamsouviki";
 
 //INTRODUCTION PAGE VARIABLE
 const String NAME = "Souvik Ghosh";
-const String PROFESSION_DETAILS = 'Computer Science Graduate';
+const String PROFESSION_DETAILS =
+    'Computer Science Graduate and Assistant System Engineer(Trainee) in TCS';
 const String MORE_DETAILS_INTRODUCTION =
     "I love to build neat, cool and scalable application.\n"
     'I love to learn and build new stuff that are beneficial to the community and cool to work on.\n'
