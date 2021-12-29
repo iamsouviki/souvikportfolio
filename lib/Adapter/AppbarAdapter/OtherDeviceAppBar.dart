@@ -31,7 +31,7 @@ class _OtherDeviceAppBarState extends State<OtherDeviceAppBar> {
                 border: Border.all(color: Colors.white38, width: 1),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(IMAGE_PATH),
+                  image: NetworkImage(IMAGE_PATH),
                 ),
               ),
             ),
@@ -99,7 +99,7 @@ class _OtherDeviceAppBarState extends State<OtherDeviceAppBar> {
                         "  Project ",
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.pop(context);
                         Navigator.push(
                             context,
