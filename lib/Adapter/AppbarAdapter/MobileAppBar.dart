@@ -20,7 +20,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
           child: Row(
             children: [
               Container(
-                padding:EdgeInsets.only(right: 8),
+                padding: EdgeInsets.only(right: 8),
                 child: Transform.rotate(
                   angle: 0,
                   child: FittedBox(
@@ -33,15 +33,17 @@ class _MobileAppBarState extends State<MobileAppBar> {
                         border: Border.all(color: Colors.white38, width: 1),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage(
-                              IMAGE_PATH),
+                          image: NetworkImage(IMAGE_PATH),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-              Text("Souvik",style: TextStyle(color: Colors.white),),
+              Text(
+                "Souvik",
+                style: TextStyle(color: Colors.white),
+              ),
             ],
           ),
         )
