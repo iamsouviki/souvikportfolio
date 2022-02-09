@@ -16,8 +16,7 @@ const String MORE_DETAILS_INTRODUCTION =
     'I also have great interest in the open source community.';
 
 //IMAGE ASSET PATH
-const String IMAGE_PATH =
-    'https://scontent.fccu10-1.fna.fbcdn.net/v/t39.30808-6/269836420_1527062867660397_4428932789537933121_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=jv1abf24r6YAX_fuXSD&_nc_ht=scontent.fccu10-1.fna&oh=00_AT-kcTEgvub7adeWI0Xt4jTCna0kTXKiXE2BrEIHiOtGAA&oe=61D1262A';
+const String IMAGE_PATH = 'assets/images/souvikimagepassport.jpg';
 
 //ABOUT ME SECTION
 const String WHO_AM_I =

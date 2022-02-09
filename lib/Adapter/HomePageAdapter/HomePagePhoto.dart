@@ -24,7 +24,7 @@ class _HomePagePhotoState extends State<HomePagePhoto> {
               color: backgroundColor,
               border: Border.all(color: borderColor, width: 2),
               image: DecorationImage(
-                image: NetworkImage(IMAGE_PATH),
+                image: AssetImage(IMAGE_PATH),
               ),
             ),
           ),

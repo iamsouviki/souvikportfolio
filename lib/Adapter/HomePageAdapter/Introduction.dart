@@ -43,7 +43,7 @@ class _IntroductionState extends State<Introduction> {
                             border: Border.all(color: borderColor, width: 2),
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: NetworkImage(IMAGE_PATH),
+                              image: AssetImage(IMAGE_PATH),
                             ),
                           ),
                         ),
@@ -67,7 +67,7 @@ class _IntroductionState extends State<Introduction> {
                             border: Border.all(color: borderColor, width: 2),
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: NetworkImage(IMAGE_PATH),
+                              image: AssetImage(IMAGE_PATH),
                             ),
                           ),
                         ),

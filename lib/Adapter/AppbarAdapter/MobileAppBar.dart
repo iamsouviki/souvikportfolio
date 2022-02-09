@@ -33,7 +33,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
                         border: Border.all(color: Colors.white38, width: 1),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(IMAGE_PATH),
+                          image: AssetImage(IMAGE_PATH),
                         ),
                       ),
                     ),
