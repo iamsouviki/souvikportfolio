@@ -20,7 +20,7 @@ class _SplashScreenScreenState extends State<SplashScreenScreen> {
   }
 
   loadWidget(){
-    var duration = Duration(seconds: 3);
+    var duration = Duration(seconds: 2);
     return Timer(duration, ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home())));
   }
 

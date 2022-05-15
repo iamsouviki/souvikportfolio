@@ -5,16 +5,16 @@ class ExperienceAdapter extends StatefulWidget {
   final String CompanyLogoPath;
   final String CompanyName;
   final String WorkDescription;
-  final String WorkDescriptionForMobile;
   final String WorkDuration;
+  final String WorkDetails;
 
   const ExperienceAdapter(
       {Key? key,
       required this.CompanyLogoPath,
       required this.CompanyName,
       required this.WorkDescription,
-      required this.WorkDescriptionForMobile,
-      required this.WorkDuration})
+      required this.WorkDuration,
+      required this.WorkDetails})
       : super(key: key);
 
   @override
@@ -32,6 +32,7 @@ class _ExperienceAdapterState extends State<ExperienceAdapter> {
         ? MediaQuery.of(context).size.width
         : 300;
     return Container(
+        width: MediaQuery.of(context).size.width,
         margin:
             width > 600 ? EdgeInsets.only(top: 60) : EdgeInsets.only(top: 30),
         padding: EdgeInsets.all(15.0),
@@ -58,13 +59,14 @@ class _ExperienceAdapterState extends State<ExperienceAdapter> {
                         FittedBox(
                           fit: BoxFit.contain,
                           child: Container(
-                            padding: EdgeInsets.only(left: 25),
+                            padding: EdgeInsets.only(left: 17),
                             child: Text(
                               widget.CompanyName,
                               style: TextStyle(
-                                  fontSize: width > 600 ? 20 : 15,
-                                  color: Colors.white,
-                                  letterSpacing: 3),
+                                fontSize: width > 600 ? 20 : 15,
+                                color: Colors.white,
+                                letterSpacing: 3,
+                              ),
                             ),
                           ),
                         )
@@ -77,24 +79,37 @@ class _ExperienceAdapterState extends State<ExperienceAdapter> {
                   FittedBox(
                     fit: BoxFit.contain,
                     child: Text(
-                        width > 600
-                            ? widget.WorkDescription
-                            : widget.WorkDescriptionForMobile,
-                        style: TextStyle(
-                            fontSize: width > 600 ? 15 : 12,
-                            color: Colors.white.withOpacity(0.6))),
+                      widget.WorkDescription,
+                      style: TextStyle(
+                        fontSize: width > 600 ? 15 : 12,
+                        color: Colors.white.withOpacity(0.8),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  Text(
+                    widget.WorkDetails,
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.white.withOpacity(0.7),
+                      letterSpacing: 2,
+                    ),
                   ),
                   SizedBox(
                     height: 7,
                   ),
                   FittedBox(
                     fit: BoxFit.contain,
-                    child: Text(widget.WorkDuration,
-                        style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.white.withOpacity(0.5),
-                            letterSpacing: 2)),
-                  )
+                    child: Text(
+                      widget.WorkDuration,
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.white.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
