@@ -5,6 +5,7 @@ import 'package:souvikportfolio/Adapter/AppbarAdapter/MobileAppBar.dart';
 import 'package:souvikportfolio/Adapter/AppbarAdapter/OtherDeviceAppBar.dart';
 import 'package:souvikportfolio/Adapter/ExperienceAdapter/ExperienceAdapter.dart';
 import 'package:souvikportfolio/Adapter/MobileDrawerAdapter/MobileDrawer.dart';
+import 'package:souvikportfolio/Variable.dart';
 
 class Experience extends StatefulWidget {
   @override
@@ -15,6 +16,34 @@ class _ExperienceState extends State<Experience> {
   late double hight, width;
   Future count(int n) async {
     return Future.delayed(Duration(seconds: n));
+  }
+
+  List<Widget> getExperiences() {
+    List<Widget> experiences = [];
+    for (var i = 0; i < Experiences.length; i++) {
+      experiences.add(Column(
+        children: [
+          FutureBuilder(
+              future: count(i + 2),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return ExperienceAdapter(
+                    CompanyLogoPath: Experiences[i]["CompanyLogoPath"]!,
+                    CompanyName: Experiences[i]["CompanyName"]!,
+                    WorkDescription: Experiences[i]["WorkDescription"]!,
+                    WorkDuration: Experiences[i]["WorkDuration"]!,
+                    WorkDetails: Experiences[i]["WorkDetails"]!,
+                  );
+                }
+                return Container();
+              }),
+          SizedBox(
+            height: 15,
+          ),
+        ],
+      ));
+    }
+    return experiences;
   }
 
   @override
@@ -60,53 +89,9 @@ class _ExperienceState extends State<Experience> {
                 SizedBox(
                   height: 15,
                 ),
-                FutureBuilder(
-                    future: count(2),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return ExperienceAdapter(
-                          CompanyLogoPath: 'assets/images/tcslogo.jpeg',
-                          CompanyName: "Tata Consultancy Services(TCS)",
-                          WorkDescription: "Assistant System Engineer-Trainee",
-                          WorkDescriptionForMobile:
-                              "Assistant System Engineer-Trainee",
-                          WorkDuration: "Oct 1 - Present",
-                        );
-                      }
-                      return Container();
-                    }),
-                FutureBuilder(
-                    future: count(4),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return ExperienceAdapter(
-                          CompanyLogoPath: 'assets/images/qworkzLOGO.jpeg',
-                          CompanyName: "Qworkz Technology Solutions",
-                          WorkDescription:
-                              "Mobile Application Developer(Intern + Full Time)",
-                          WorkDescriptionForMobile:
-                              "Mobile Application Developer(Intern + Full Time)",
-                          WorkDuration: "May,2021 - Sep,2021",
-                        );
-                      }
-                      return Container();
-                    }),
-                FutureBuilder(
-                    future: count(6),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return ExperienceAdapter(
-                          CompanyLogoPath:
-                              'assets/images/digitalgriendlogo.png',
-                          CompanyName: "Digital Friend",
-                          WorkDescription: "Flutter Developer(Intern)",
-                          WorkDescriptionForMobile:
-                              "Flutter Developer(Intern).",
-                          WorkDuration: "Apr,2021 - Sep,2021",
-                        );
-                      }
-                      return Container();
-                    }),
+                Column(
+                  children: getExperiences(),
+                ),
               ],
             ),
           ),
