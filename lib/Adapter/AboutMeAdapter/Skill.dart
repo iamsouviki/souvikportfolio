@@ -51,7 +51,7 @@ class _SkillState extends State<Skill> {
                 return Container();
               },
             ),
-            SizedBox(height: 50,),
+            SizedBox(height: 40,),
           ],
         ),
       );
