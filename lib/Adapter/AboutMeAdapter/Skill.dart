@@ -32,7 +32,7 @@ class _SkillState extends State<Skill> {
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return Container(
-                    padding: EdgeInsets.fromLTRB(15, 15, 15, 50),
+                    padding: EdgeInsets.fromLTRB(15, 15, 15, 10),
                     child: AnimatedTextKit(
                       isRepeatingAnimation: false,
                       animatedTexts: [
@@ -51,6 +51,7 @@ class _SkillState extends State<Skill> {
                 return Container();
               },
             ),
+            SizedBox(height: 50,),
           ],
         ),
       );
