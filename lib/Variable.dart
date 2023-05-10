@@ -46,9 +46,10 @@ const Skills = [
   "Flutter",
   "Android",
   "NextJs",
+  "Salesforce Commerce Cloud",
+  "Springboot",
   "PYTHON ( Programming )",
   "Git",
-  "Springboot",
   "Azure Cosmosdb"
 ];
 
