@@ -10,22 +10,19 @@ const String FACEBOOK_URL = "https://fb.com/iamsouviki";
 //INTRODUCTION PAGE VARIABLE
 const String NAME = "Souvik Ghosh";
 const String PROFESSION_DETAILS =
-    'System Engineer in Tata Consultancy Services(TCS) and Computer Science Graduate(2021)';
+    'System Engineer at Tata Consultancy Services (TCS), specializing in Java Spring Boot and React JS development.';
 const String MORE_DETAILS_INTRODUCTION =
-    "I love to build neat, cool and scalable application.\n"
-    'I love to learn and build new stuff that are beneficial to the community and cool to work on.\n'
-    'I also have great interest in the open source community.';
+    "I am passionate about creating high-performance, community-driven solutions and enjoy exploring new technologies.\n"
+    'I believe that hands-on experience is the most effective way to learn new skills.';
 
 //IMAGE ASSET PATH
 const String IMAGE_PATH = 'assets/images/souvikimagepassport.jpg';
 
 //ABOUT ME SECTION
-const String WHO_AM_I =
-    "Hello! I'm Souvik Ghosh , a Computer Science Graduate, Flutter developer Developer and System Engineer in Tata Consultancy Services(TCS).\n"
-    'I love to create performant and interesting stuff that are benificial to the community. I enjoy learning and exploring new areas in the technologies. \nIn my opinion,'
-    'getting your hands dirty is the best way to learn a new skill.\n'
-    'My area of interest are Cross Platform Application Development , Android Application Development and Full Stack Development\n'
-    'Beside Programming, I love playing cricket and watching cricket matches with a mug full of coffee.';
+const String WHO_AM_I ="Hello! I'm Souvik Ghosh, a Computer Science graduate and System Engineer at Tata Consultancy Services (TCS), specializing in Java Spring Boot and React JS development.\n"+
+    "I am passionate about creating high-performance, community-driven solutions and enjoy exploring new technologies. I believe that hands-on experience is the most effective way to learn new skills.\n"+
+    "My areas of expertise include Java Backend Development, Web Development, Cross-Platform Application Development, Android Development, and Full Stack Development. Outside of programming,\n"+
+    "I enjoy playing cricket and watching matches with a cup of coffee.";
 
 //EDUCATION
 const String DEGREE =
@@ -41,19 +38,17 @@ const String TENTH_PERCENTAGE = "Percentage :- 85.71";
 
 //SKILLS
 const Skills = [
-  "JAVA",
+  "Java Springboot",
   "ReactJs",
   "Flutter",
-  "Android",
   "NextJs",
+  "Java Spring Integration",
+  "Android",
   "Salesforce Commerce Cloud",
-  "Springboot",
-  "Demandware",
   "Angular Js",
   "NodeJs",
-  "PYTHON ( Programming )",
-  "Git",
-  "Azure Cosmosdb"
+  "PYTHON",
+  "Git"
 ];
 
 //Experiences
