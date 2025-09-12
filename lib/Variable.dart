@@ -66,7 +66,7 @@ const Experiences = [
     "CompanyLogoPath": 'assets/images/tcslogo.jpeg',
     "CompanyName": "Tata Consultancy Services(TCS)",
     "WorkDescription": "System Engineer",
-    "WorkDetails": "Work as a Reactjs and Nextjs Developer and Saleforce Commerce Cloud support and maintenance",
+    "WorkDetails": "Work as a Full-Stack Android Developer using Java Springboot & Flutter.",
     "WorkDuration": "Oct 1,2021 - Present",
   }
   // {
