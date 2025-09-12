@@ -10,7 +10,16 @@ const String FACEBOOK_URL = "https://fb.com/iamsouviki";
 //INTRODUCTION PAGE VARIABLE
 const String NAME = "Souvik Ghosh";
 const String PROFESSION_DETAILS =
-    'System Engineer at Tata Consultancy Services (TCS), specializing in Java Spring Boot and React JS development.';
+    'Dynamic Full-Stack Android App Developer at Tata Consultancy Services,
+specializing in Core Java, Java Spring Boot and Flutter, with a proven track
+record of delivering scalable solutions that enhance system efficiency and
+user experience. Expertise includes order processing, inventory
+management, and driving improvements in Android applications for a
+diverse range of global clients. B.Tech graduate in Computer Science,
+dedicated to continuous learning and fostering collaboration while tackling
+complex technical challenges through innovative approaches. Passionate
+about leveraging technology to create impactful solutions that meet
+evolving business needs';
 const String MORE_DETAILS_INTRODUCTION =
     "I am passionate about creating high-performance, community-driven solutions and enjoy exploring new technologies.\n"
     'I believe that hands-on experience is the most effective way to learn new skills.';
@@ -19,7 +28,7 @@ const String MORE_DETAILS_INTRODUCTION =
 const String IMAGE_PATH = 'assets/images/souvikimagepassport.jpg';
 
 //ABOUT ME SECTION
-const String WHO_AM_I ="Hello! I'm Souvik Ghosh, a Computer Science graduate and System Engineer at Tata Consultancy Services (TCS), specializing in Java Spring Boot and React JS development.\n"+
+const String WHO_AM_I ="Hello! I'm Souvik Ghosh, a Computer Science graduate and System Engineer at Tata Consultancy Services (TCS), specializing in Java Spring Boot,Flutter and React JS development.\n"+
     "I am passionate about creating high-performance, community-driven solutions and enjoy exploring new technologies. I believe that hands-on experience is the most effective way to learn new skills.\n"+
     "My areas of expertise include Java Backend Development, Web Development, Cross-Platform Application Development, Android Development, and Full Stack Development. Outside of programming,\n"+
     "I enjoy playing cricket and watching matches with a cup of coffee.";
@@ -59,19 +68,19 @@ const Experiences = [
     "WorkDescription": "System Engineer",
     "WorkDetails": "Work as a Reactjs and Nextjs Developer and Saleforce Commerce Cloud support and maintenance",
     "WorkDuration": "Oct 1,2021 - Present",
-  },
-  {
-    "CompanyLogoPath": 'assets/images/qworkzLOGO.jpeg',
-    "CompanyName": "Qworkz Technology Solutions",
-    "WorkDescription": "Mobile Application Developer(Intern + Full Time)",
-    "WorkDuration": "May,2021 - Sep,2021",
-    "WorkDetails": "Work as a Flutter Frontend Developer",
-  },
-  {
-    "CompanyLogoPath": 'assets/images/digitalgriendlogo.png',
-    "CompanyName": "Digital Friend",
-    "WorkDescription": "Flutter Developer(Intern)",
-    "WorkDuration": "Apr,2021 - Sep,2021",
-    "WorkDetails": "Work as a Flutter , Springboot and NodeJs Developer",
   }
+  // {
+  //   "CompanyLogoPath": 'assets/images/qworkzLOGO.jpeg',
+  //   "CompanyName": "Qworkz Technology Solutions",
+  //   "WorkDescription": "Mobile Application Developer(Intern + Full Time)",
+  //   "WorkDuration": "May,2021 - Sep,2021",
+  //   "WorkDetails": "Work as a Flutter Frontend Developer",
+  // },
+  // {
+  //   "CompanyLogoPath": 'assets/images/digitalgriendlogo.png',
+  //   "CompanyName": "Digital Friend",
+  //   "WorkDescription": "Flutter Developer(Intern)",
+  //   "WorkDuration": "Apr,2021 - Sep,2021",
+  //   "WorkDetails": "Work as a Flutter , Springboot and NodeJs Developer",
+  // }
 ];
