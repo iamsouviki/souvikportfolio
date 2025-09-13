@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  velocity_x: ^4.2.1
+  velocity_x: ^4.3.1
   google_fonts: ^6.2.1
   url_launcher: ^6.0.3
   animated_text_kit: ^4.2.1

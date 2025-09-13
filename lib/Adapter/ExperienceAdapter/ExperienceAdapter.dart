@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:souvikportfolio/Variable.dart';
 
 class ExperienceAdapter extends StatefulWidget {
   final String CompanyLogoPath;
@@ -8,112 +8,138 @@ class ExperienceAdapter extends StatefulWidget {
   final String WorkDuration;
   final String WorkDetails;
 
-  const ExperienceAdapter(
-      {Key? key,
-      required this.CompanyLogoPath,
-      required this.CompanyName,
-      required this.WorkDescription,
-      required this.WorkDuration,
-      required this.WorkDetails})
-      : super(key: key);
+  const ExperienceAdapter({
+    Key? key,
+    required this.CompanyLogoPath,
+    required this.CompanyName,
+    required this.WorkDescription,
+    required this.WorkDuration,
+    required this.WorkDetails,
+  }) : super(key: key);
 
   @override
-  _ExperienceAdapterState createState() => _ExperienceAdapterState();
+  State<ExperienceAdapter> createState() => _ExperienceAdapterState();
 }
 
 class _ExperienceAdapterState extends State<ExperienceAdapter> {
-  late double hight, width;
+  late double height, width;
+
   @override
   Widget build(BuildContext context) {
-    hight = MediaQuery.of(context).size.height > 600
+    height = MediaQuery.of(context).size.height > 600
         ? MediaQuery.of(context).size.height
         : 600;
     width = MediaQuery.of(context).size.width > 300
         ? MediaQuery.of(context).size.width
         : 300;
+
+    final double logoSize = width > 600 ? 60.0 : 50.0;
+
     return Container(
-        width: MediaQuery.of(context).size.width,
-        margin:
-            width > 600 ? EdgeInsets.only(top: 60) : EdgeInsets.only(top: 30),
-        padding: EdgeInsets.all(15.0),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            border: Border.all(color: Colors.white.withOpacity(0.7), width: 1)),
-        child: Column(
-          children: [
-            Container(
+      width: MediaQuery.of(context).size.width,
+      margin: width > 600
+          ? const EdgeInsets.only(top: 60)
+          : const EdgeInsets.only(top: 30),
+      child: Card(
+        color: Colors.transparent,
+        elevation: 8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.white.withOpacity(0.1),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Padding(
+              padding: const EdgeInsets.all(20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  FittedBox(
-                    fit: BoxFit.contain,
-                    child: Row(
-                      children: [
-                        FittedBox(
-                          fit: BoxFit.contain,
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            child: Image.asset(widget.CompanyLogoPath),
-                          ),
+                  // Logo
+                  ClipOval(
+                    child: Container(
+                      width: logoSize,
+                      height: logoSize,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.blue.shade300,
+                          width: 3,
                         ),
-                        FittedBox(
-                          fit: BoxFit.contain,
-                          child: Container(
-                            padding: EdgeInsets.only(left: 17),
-                            child: Text(
-                              widget.CompanyName,
-                              style: TextStyle(
-                                fontSize: width > 600 ? 20 : 15,
-                                color: Colors.white,
-                                letterSpacing: 3,
-                              ),
-                            ),
-                          ),
-                        )
+                      ),
+                      child: Image.asset(
+                        widget.CompanyLogoPath,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  // Company Name
+                  Text(
+                    widget.CompanyName,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: width > 600 ? 24 : 18,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.2,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black26,
+                          offset: const Offset(1, 1),
+                          blurRadius: 2,
+                        ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 7,
-                  ),
-                  FittedBox(
-                    fit: BoxFit.contain,
-                    child: Text(
-                      widget.WorkDescription,
-                      style: TextStyle(
-                        fontSize: width > 600 ? 15 : 12,
-                        color: Colors.white.withOpacity(0.8),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 7,
-                  ),
+                  const SizedBox(height: 12),
+                  // Work Description
                   Text(
-                    widget.WorkDetails,
+                    widget.WorkDescription,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 10,
-                      color: Colors.white.withOpacity(0.7),
-                      letterSpacing: 2,
+                      color: Colors.white,
+                      fontSize: width > 600 ? 17 : 15,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
-                    height: 7,
-                  ),
-                  FittedBox(
-                    fit: BoxFit.contain,
+                  const SizedBox(height: 12),
+                  // Work Details
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
-                      widget.WorkDuration,
+                      widget.WorkDetails,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white,
+                        fontSize: width > 600 ? 14 : 12,
+                        fontWeight: FontWeight.w700,
+                        height: 1.6,
                       ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  // Work Duration
+                  Text(
+                    widget.WorkDuration,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic,
                     ),
                   ),
                 ],
               ),
             ),
-          ],
-        ));
+          ),
+        ),
+      ),
+    );
   }
 }

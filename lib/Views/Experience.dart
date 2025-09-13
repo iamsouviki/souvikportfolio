@@ -5,6 +5,7 @@ import 'package:souvikportfolio/Adapter/AppbarAdapter/MobileAppBar.dart';
 import 'package:souvikportfolio/Adapter/AppbarAdapter/OtherDeviceAppBar.dart';
 import 'package:souvikportfolio/Adapter/ExperienceAdapter/ExperienceAdapter.dart';
 import 'package:souvikportfolio/Adapter/MobileDrawerAdapter/MobileDrawer.dart';
+import 'package:souvikportfolio/Adapter/SocialAccounts.dart';
 import 'package:souvikportfolio/Variable.dart';
 
 class Experience extends StatefulWidget {
@@ -61,40 +62,46 @@ class _ExperienceState extends State<Experience> {
         child: width < 600 ? MobileAppBar() : OtherDeviceAppBar(),
       ),
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Container(
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-            height: hight,
-            width: width,
-            child: ListView(
-              children: [
-                Center(
-                    child: Container(
-                  child: AnimatedTextKit(
-                    isRepeatingAnimation: false,
-                    animatedTexts: [
-                      TypewriterAnimatedText("Where I Worked",
-                          speed: Duration(milliseconds: 80),
-                          textStyle: TextStyle(
-                              fontSize: width > 600 ? 40 : 27,
-                              color: Colors.white,
-                              letterSpacing: 4),
-                          textAlign: TextAlign.start),
-                    ],
-                  ),
-                )),
-                SizedBox(
-                  height: 15,
-                ),
-                Column(
-                  children: getExperiences(),
-                ),
-              ],
+      body: Container(
+        width: width,
+        height: hight,
+        padding: EdgeInsets.all(10),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 60,
+              child: SocialAccounts(),
             ),
-          ),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
+                children: [
+                  Center(
+                      child: Container(
+                    child: AnimatedTextKit(
+                      isRepeatingAnimation: false,
+                      animatedTexts: [
+                        TypewriterAnimatedText("Where I Worked",
+                            speed: Duration(milliseconds: 80),
+                            textStyle: TextStyle(
+                                fontSize: width > 600 ? 40 : 27,
+                                color: Colors.white,
+                                letterSpacing: 4),
+                            textAlign: TextAlign.start),
+                      ],
+                    ),
+                  )),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Column(
+                    children: getExperiences(),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

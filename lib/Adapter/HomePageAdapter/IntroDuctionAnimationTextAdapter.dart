@@ -97,49 +97,25 @@ class _IntroDuctionAnimationTextAdapterState
             ),
           ),
           Container(
-            child: FutureBuilder(
-              future: count(5),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return Container(
-                    padding: EdgeInsets.all(10),
-                    child: AnimatedTextKit(
-                      isRepeatingAnimation: false,
-                      animatedTexts: [
-                        TypewriterAnimatedText(
-                          MORE_DETAILS_INTRODUCTION,
-                          speed: Duration(milliseconds: 10),
-                          textStyle: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                            letterSpacing: 1.2,
-                            height: 1.3,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                }
-                return Container();
-              },
-            ),
-          ),
-          Container(
             padding: EdgeInsets.only(bottom: 20),
             child: FutureBuilder(
               future: count(8),
-              builder: (context,snapshot){
-                if(snapshot.connectionState == ConnectionState.done){
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
                   return Container(
                     margin: EdgeInsets.only(top: 15),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(30.0),color: Colors.white38,),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      color: Colors.white38,
+                    ),
                     child: TextButton(
                       child: Text(
                         "    Resume    ",
                         style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
-                      onPressed: (){
-                        launch("https://drive.google.com/file/d/1VoUkdWeccwntgGrs-tFTj8VNGqpQmYPl/view?usp=sharing");
+                      onPressed: () {
+                        launch(
+                            "https://drive.google.com/file/d/1VoUkdWeccwntgGrs-tFTj8VNGqpQmYPl/view?usp=sharing");
                       },
                     ),
                   );
