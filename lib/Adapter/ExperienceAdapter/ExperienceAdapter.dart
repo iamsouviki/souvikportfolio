@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:souvikportfolio/Variable.dart';
 
 class ExperienceAdapter extends StatefulWidget {
   final String CompanyLogoPath;

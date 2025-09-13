@@ -57,7 +57,7 @@ class _IntroDuctionAnimationTextAdapterState
                         TypewriterAnimatedText("I'm " + NAME,
                             speed: Duration(milliseconds: 55),
                             textStyle: TextStyle(
-                              color: Colors.blueGrey[900],
+                              color: Colors.white,
                               fontSize: 30,
                               fontWeight: FontWeight.w700,
                             ),
@@ -83,7 +83,7 @@ class _IntroDuctionAnimationTextAdapterState
                         TypewriterAnimatedText(
                           PROFESSION_DETAILS,
                           textStyle: TextStyle(
-                            color: Colors.blueGrey[900],
+                            color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
                           ),
@@ -137,7 +137,7 @@ class _IntroDuctionAnimationTextAdapterState
                         TypewriterAnimatedText(
                           "Design & Build by Souvik with ❤ Flutter",
                           textStyle: TextStyle(
-                            color: Colors.grey,
+                            color: const Color.fromARGB(255, 216, 214, 214),
                             fontSize: 10,
                             letterSpacing: 1.2,
                             height: 1.3,

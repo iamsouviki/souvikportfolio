@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:velocity_x/velocity_x.dart';
-import 'package:flutter/widgets.dart';
 
 import '../Variable.dart';
 

@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:souvikportfolio/Adapter/AppbarAdapter/MobileAppBar.dart';
 import 'package:souvikportfolio/Adapter/AppbarAdapter/OtherDeviceAppBar.dart';
 import 'package:souvikportfolio/Adapter/ExperienceAdapter/ExperienceAdapter.dart';
