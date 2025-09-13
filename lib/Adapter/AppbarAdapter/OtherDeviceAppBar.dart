@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:souvikportfolio/Views/AboutMe.dart';
-import 'package:souvikportfolio/Views/Experience.dart';
-import 'package:souvikportfolio/Views/Home.dart';
-import 'package:souvikportfolio/Views/Projects.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../Variable.dart';
 
@@ -53,9 +50,7 @@ class _OtherDeviceAppBarState extends State<OtherDeviceAppBar> {
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Home()));
+                        context.go('/');
                       },
                     )),
               ),
@@ -68,9 +63,7 @@ class _OtherDeviceAppBarState extends State<OtherDeviceAppBar> {
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => AboutMe()));
+                        context.go('/about');
                       },
                     )),
               ),
@@ -83,11 +76,7 @@ class _OtherDeviceAppBarState extends State<OtherDeviceAppBar> {
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Experience()));
+                        context.go('/experience');
                       },
                     )),
               ),
@@ -100,11 +89,7 @@ class _OtherDeviceAppBarState extends State<OtherDeviceAppBar> {
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Projects()));
+                        context.go('/projects');
                       },
                     )),
               ),

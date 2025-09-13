@@ -12,6 +12,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late double hight, width;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(AssetImage('assets/images/souvikimagepassport.jpg'), context);
+  }
+
   @override
   Widget build(BuildContext context) {
     hight = MediaQuery.of(context).size.height > 600
@@ -42,11 +49,14 @@ class _HomeState extends State<Home> {
                     child: SocialAccounts(),
                   ),
                   Expanded(
-                    child: ListView(
+                    child: SingleChildScrollView(
                       padding: EdgeInsets.all(15),
-                      children: [
-                        Introduction(),
-                      ],
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Introduction(),
+                        ],
+                      ),
                     ),
                   ),
                 ],

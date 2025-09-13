@@ -14,6 +14,15 @@ class AboutMe extends StatefulWidget {
 
 class _AboutMeState extends State<AboutMe> {
   late double hight, width;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(
+        const AssetImage('assets/images/souvikimagepassport.jpg'), context);
+    precacheImage(const AssetImage('assets/images/education.png'), context);
+  }
+
   @override
   Widget build(BuildContext context) {
     hight = MediaQuery.of(context).size.height > 600

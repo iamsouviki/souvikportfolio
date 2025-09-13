@@ -35,8 +35,8 @@ class _SkillState extends State<Skill> with TickerProviderStateMixin {
       _progressValues.add(SkillPercentages[Skills[i]]!);
     }
 
-    // Call onComplete after title and skill names (2s for typing)
-    Future.delayed(const Duration(seconds: 2), () {
+    // Call onComplete after title and skill names (1s for typing)
+    Future.delayed(const Duration(milliseconds: 1000), () {
       if (mounted && widget.onComplete != null) {
         widget.onComplete?.call();
       }
@@ -169,7 +169,7 @@ class _SkillState extends State<Skill> with TickerProviderStateMixin {
                                         widget.showAnimations
                                             ? FutureBuilder(
                                                 future: Future.delayed(Duration(
-                                                    milliseconds: 200 * index)),
+                                                    milliseconds: 100 * index)),
                                                 builder: (context, snapshot) {
                                                   if (snapshot
                                                           .connectionState ==
@@ -268,7 +268,7 @@ class _SkillState extends State<Skill> with TickerProviderStateMixin {
                                       widget.showAnimations
                                           ? FutureBuilder(
                                               future: Future.delayed(Duration(
-                                                  milliseconds: 200 * index)),
+                                                  milliseconds: 100 * index)),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {

@@ -30,8 +30,8 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
     );
     _controller.forward();
 
-    // Call onComplete after animations finish (title ~0.5s + staggered bio ~9.5s)
-    Future.delayed(const Duration(seconds: 11), () {
+    // Call onComplete after animations finish (title ~0.5s + staggered bio ~2s)
+    Future.delayed(const Duration(milliseconds: 2500), () {
       if (mounted) {
         widget.onComplete?.call();
       }
@@ -45,7 +45,9 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
   }
 
   Future count(int n) async {
-    return Future.delayed(Duration(seconds: n));
+    return Future.delayed(Duration(
+        milliseconds:
+            n * 300)); // Reduced delays for faster staggered animations
   }
 
   @override
@@ -186,8 +188,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 2)),
+                                              future: count(2),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -220,8 +221,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 4)),
+                                              future: count(4),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -254,8 +254,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 6)),
+                                              future: count(6),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -288,8 +287,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 8)),
+                                              future: count(8),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -402,8 +400,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 2)),
+                                              future: count(2),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -436,8 +433,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 4)),
+                                              future: count(4),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -473,8 +469,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 6)),
+                                              future: count(6),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {
@@ -510,8 +505,7 @@ class _AboutState extends State<About> with TickerProviderStateMixin {
                                               },
                                             ),
                                             FutureBuilder(
-                                              future: Future.delayed(
-                                                  Duration(seconds: 8)),
+                                              future: count(8),
                                               builder: (context, snapshot) {
                                                 if (snapshot.connectionState ==
                                                     ConnectionState.done) {

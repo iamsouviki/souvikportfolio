@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:souvikportfolio/Views/AboutMe.dart';
-import 'package:souvikportfolio/Views/Experience.dart';
-import 'package:souvikportfolio/Views/Home.dart';
-import 'package:souvikportfolio/Views/Projects.dart';
+import 'package:go_router/go_router.dart';
+
 class MobileDrawer extends StatefulWidget {
   @override
   _MobileDrawerState createState() => _MobileDrawerState();
@@ -28,8 +26,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+              context.go('/');
             },
           ),
           ListTile(
@@ -43,8 +40,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => AboutMe()));
+              context.go('/about');
             },
           ),
           ListTile(
@@ -58,8 +54,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Experience()));
+              context.go('/experience');
             },
           ),
           ListTile(
@@ -73,8 +68,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Projects()));
+              context.go('/projects');
             },
           ),
         ],

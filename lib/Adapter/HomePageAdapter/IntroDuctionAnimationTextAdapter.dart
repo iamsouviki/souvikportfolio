@@ -13,7 +13,8 @@ class IntroDuctionAnimationTextAdapter extends StatefulWidget {
 class _IntroDuctionAnimationTextAdapterState
     extends State<IntroDuctionAnimationTextAdapter> {
   Future count(int n) async {
-    return Future.delayed(Duration(seconds: n));
+    return Future.delayed(Duration(
+        milliseconds: n * 500)); // Reduced delays for faster animation sequence
   }
 
   @override
@@ -96,7 +97,7 @@ class _IntroDuctionAnimationTextAdapterState
           Container(
             padding: EdgeInsets.only(bottom: 20),
             child: FutureBuilder(
-              future: count(8),
+              future: count(6),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return Container(

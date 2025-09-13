@@ -30,8 +30,8 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
     );
     _controller.forward();
 
-    // Call onComplete after animations finish (title ~0.5s + staggered texts ~5.5s)
-    Future.delayed(const Duration(seconds: 6), () {
+    // Call onComplete after animations finish (title ~0.5s + staggered texts ~1.5s)
+    Future.delayed(const Duration(milliseconds: 1500), () {
       if (mounted) {
         widget.onComplete?.call();
       }
@@ -45,7 +45,9 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
   }
 
   Future count(int n) async {
-    return Future.delayed(Duration(seconds: n));
+    return Future.delayed(Duration(
+        milliseconds:
+            n * 200)); // Reduced delays for faster staggered animations
   }
 
   @override
@@ -157,8 +159,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // Degree
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 1000)),
+                                          future: count(5),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -204,8 +205,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // College
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 1600)),
+                                          future: count(8),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -251,8 +251,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // CGPA
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 2200)),
+                                          future: count(11),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -298,8 +297,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // 10+2 Year
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 2800)),
+                                          future: count(14),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -345,8 +343,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // 12th School
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 3400)),
+                                          future: count(17),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -392,8 +389,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // 12th Percentage
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 4000)),
+                                          future: count(20),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -439,8 +435,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // 10th Year
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 4600)),
+                                          future: count(23),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -486,8 +481,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // 10th School
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 5200)),
+                                          future: count(26),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -533,8 +527,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                   // 10th Percentage
                                   widget.showAnimations
                                       ? FutureBuilder(
-                                          future: Future.delayed(
-                                              Duration(milliseconds: 5800)),
+                                          future: count(29),
                                           builder: (context, snapshot) {
                                             if (snapshot.connectionState ==
                                                 ConnectionState.done) {
@@ -612,8 +605,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // Degree
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 1000)),
+                                        future: count(5),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -658,8 +650,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // College
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 1600)),
+                                        future: count(8),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -704,8 +695,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // CGPA
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 2200)),
+                                        future: count(11),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -750,8 +740,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // 10+2 Year
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 2800)),
+                                        future: count(14),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -796,8 +785,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // 12th School
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 3400)),
+                                        future: count(17),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -842,8 +830,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // 12th Percentage
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 4000)),
+                                        future: count(20),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -888,8 +875,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // 10th Year
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 4600)),
+                                        future: count(23),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -934,8 +920,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // 10th School
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 5200)),
+                                        future: count(26),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
@@ -980,8 +965,7 @@ class _EducationState extends State<Education> with TickerProviderStateMixin {
                                 // 10th Percentage
                                 widget.showAnimations
                                     ? FutureBuilder(
-                                        future: Future.delayed(
-                                            Duration(milliseconds: 5800)),
+                                        future: count(29),
                                         builder: (context, snapshot) {
                                           if (snapshot.connectionState ==
                                               ConnectionState.done) {
