@@ -51,6 +51,16 @@ class _AboutMeState extends State<AboutMe> {
                       Education(),
                       SizedBox(height: 25.0),
                       Skill(),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Design & Build by Souvik with ❤ Flutter",
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      ),
+                      SizedBox(
+                        height: 70,
+                      ),
                     ],
                   ),
                 ],

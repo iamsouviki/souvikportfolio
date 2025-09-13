@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../Variable.dart';
@@ -117,33 +114,6 @@ class _IntroDuctionAnimationTextAdapterState
                         launch(
                             "https://drive.google.com/file/d/1VoUkdWeccwntgGrs-tFTj8VNGqpQmYPl/view?usp=sharing");
                       },
-                    ),
-                  );
-                }
-                return Container();
-              },
-            ),
-          ),
-          Container(
-            child: FutureBuilder(
-              future: count(9),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return Container(
-                    padding: EdgeInsets.fromLTRB(0, 40, 10, 20),
-                    child: AnimatedTextKit(
-                      isRepeatingAnimation: false,
-                      animatedTexts: [
-                        TypewriterAnimatedText(
-                          "Design & Build by Souvik with ❤ Flutter",
-                          textStyle: TextStyle(
-                            color: const Color.fromARGB(255, 216, 214, 214),
-                            fontSize: 10,
-                            letterSpacing: 1.2,
-                            height: 1.3,
-                          ),
-                        ),
-                      ],
                     ),
                   );
                 }

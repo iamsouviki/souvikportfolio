@@ -61,47 +61,69 @@ class _ExperienceState extends State<Experience> {
         child: width < 600 ? MobileAppBar() : OtherDeviceAppBar(),
       ),
       backgroundColor: Colors.black,
-      body: Container(
-        width: width,
-        height: hight,
-        padding: EdgeInsets.all(10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: 60,
-              child: SocialAccounts(),
-            ),
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Container(
+              width: width,
+              height: hight,
+              padding: EdgeInsets.all(10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(
-                      child: Container(
-                    child: AnimatedTextKit(
-                      isRepeatingAnimation: false,
-                      animatedTexts: [
-                        TypewriterAnimatedText("Where I Worked",
-                            speed: Duration(milliseconds: 80),
-                            textStyle: TextStyle(
-                                fontSize: width > 600 ? 40 : 27,
-                                color: Colors.white,
-                                letterSpacing: 4),
-                            textAlign: TextAlign.start),
+                  Container(
+                    width: 60,
+                    child: SocialAccounts(),
+                  ),
+                  Expanded(
+                    child: ListView(
+                      padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
+                      children: [
+                        Center(
+                            child: Container(
+                          child: AnimatedTextKit(
+                            isRepeatingAnimation: false,
+                            animatedTexts: [
+                              TypewriterAnimatedText("Where I Worked",
+                                  speed: Duration(milliseconds: 80),
+                                  textStyle: TextStyle(
+                                      fontSize: width > 600 ? 40 : 27,
+                                      color: Colors.white,
+                                      letterSpacing: 4),
+                                  textAlign: TextAlign.start),
+                            ],
+                          ),
+                        )),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Column(
+                          children: getExperiences(),
+                        ),
                       ],
                     ),
-                  )),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Column(
-                    children: getExperiences(),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Text(
+                "Design & Build by Souvik with ❤ Flutter",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 216, 214, 214),
+                  fontSize: 10,
+                  letterSpacing: 1.2,
+                  height: 1.3,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

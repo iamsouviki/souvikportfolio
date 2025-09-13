@@ -27,27 +27,45 @@ class _HomeState extends State<Home> {
         child: width < 600 ? MobileAppBar() : OtherDeviceAppBar(),
       ),
       backgroundColor: Colors.black,
-      body: Container(
-        width: width,
-        height: hight,
-        padding: EdgeInsets.all(10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: 60,
-              child: SocialAccounts(),
-            ),
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.all(15),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Container(
+              width: width,
+              height: hight,
+              padding: EdgeInsets.all(10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Introduction(),
+                  Container(
+                    width: 60,
+                    child: SocialAccounts(),
+                  ),
+                  Expanded(
+                    child: ListView(
+                      padding: EdgeInsets.all(15),
+                      children: [
+                        Introduction(),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                "Design & Build by Souvik with ❤ Flutter",
+                style: TextStyle(color: Colors.white, fontSize: 12),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
