@@ -12,14 +12,14 @@ class Projects extends StatefulWidget {
 }
 
 class _ProjectsState extends State<Projects> {
-  late double hight, width;
+  late double height, width;
   Future count(int n) async {
     return Future.delayed(Duration(seconds: n));
   }
 
   @override
   Widget build(BuildContext context) {
-    hight = MediaQuery.of(context).size.height > 600
+    height = MediaQuery.of(context).size.height > 600
         ? MediaQuery.of(context).size.height
         : 600;
     width = MediaQuery.of(context).size.width > 300
@@ -34,7 +34,7 @@ class _ProjectsState extends State<Projects> {
       backgroundColor: Colors.black,
       body: Container(
         width: width,
-        height: hight,
+        height: height,
         padding: EdgeInsets.all(10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,17 +70,17 @@ class _ProjectsState extends State<Projects> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return ProjectAdapter(
-                            ProjectName: "Read Write & Share",
-                            ProjectLogoPath: 'assets/images/iv.png',
-                            ProjectDescription:
+                            projectName: "Read Write & Share",
+                            projectLogoPath: 'assets/images/iv.png',
+                            projectDescription:
                                 "'RWS' or 'Read Write & Share' is an Android application .\nOne can use it as a code editor (c,c++,java,python) and sharing purpose",
-                            ProjectDescriptionForMobile:
+                            projectDescriptionForMobile:
                                 "'RWS' or 'Read Write & Share' is an Android application .\nOne can use it as a code editor (c,c++,java,python) and sharing purpose",
-                            FirstTechnology: 'ANDROID ',
-                            SecondTechnology: ' , JAVA ',
-                            ThirdTechnology: ' , XML ',
-                            ForthTechnology: ' , REST API (Retrofit)',
-                            ProjectUrl:
+                            firstTechnology: 'ANDROID ',
+                            secondTechnology: ' , JAVA ',
+                            thirdTechnology: ' , XML ',
+                            fourthTechnology: ' , REST API (Retrofit)',
+                            projectUrl:
                                 "https://github.com/iamsouviki/Read-Write-and-Share",
                           );
                         }
@@ -94,18 +94,18 @@ class _ProjectsState extends State<Projects> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return ProjectAdapter(
-                            ProjectName: "Tic Tac Toe",
-                            ProjectLogoPath: '',
-                            ProjectDescription:
+                            projectName: "Tic Tac Toe",
+                            projectLogoPath: '',
+                            projectDescription:
                                 "'Tic Tac Toe' is a flutter application using BackTracking MinMax Algorithm .\n Here We can play with computer as well as human .",
-                            ProjectDescriptionForMobile:
+                            projectDescriptionForMobile:
                                 "'Tic Tac Toe' is a flutter application using BackTracking MinMax Algorithm .\n Here We can play with computer as well as human .",
-                            FirstTechnology: ' Flutter ',
-                            SecondTechnology:
+                            firstTechnology: ' Flutter ',
+                            secondTechnology:
                                 ' , Algorithm (BackTrcking Minmax) ',
-                            ThirdTechnology: ' , Dart',
-                            ForthTechnology: ' , Github  , Firebase',
-                            ProjectUrl:
+                            thirdTechnology: ' , Dart',
+                            fourthTechnology: ' , Github  , Firebase',
+                            projectUrl:
                                 "https://github.com/iamsouviki/tictactoe_game",
                           );
                         }
@@ -119,17 +119,17 @@ class _ProjectsState extends State<Projects> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return ProjectAdapter(
-                            ProjectName: "My Portfolio",
-                            ProjectLogoPath: '',
-                            ProjectDescription:
+                            projectName: "My Portfolio",
+                            projectLogoPath: '',
+                            projectDescription:
                                 "'My Portfolio' is a flutter web application . Its just a web resume",
-                            ProjectDescriptionForMobile:
+                            projectDescriptionForMobile:
                                 "'My Portfolio' is a flutter web application .\nIts just a web resume",
-                            FirstTechnology: 'FLUTTER ',
-                            SecondTechnology: ', DART ',
-                            ThirdTechnology: ', FIREBASE ',
-                            ForthTechnology: ', GITHUB',
-                            ProjectUrl:
+                            firstTechnology: 'FLUTTER ',
+                            secondTechnology: ', DART ',
+                            thirdTechnology: ', FIREBASE ',
+                            fourthTechnology: ', GITHUB',
+                            projectUrl:
                                 "https://github.com/iamsouviki/souvikportfolio",
                           );
                         }
@@ -143,17 +143,17 @@ class _ProjectsState extends State<Projects> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return ProjectAdapter(
-                            ProjectName: "Expense Manager",
-                            ProjectLogoPath: '',
-                            ProjectDescription:
+                            projectName: "Expense Manager",
+                            projectLogoPath: '',
+                            projectDescription:
                                 "'Expense Manager' is a Python GUI tikinter Based application , \nwhich is developed to keep tracking on daily expenses and as well as we can save money for predefine expenses\n which will help for future investment . ",
-                            ProjectDescriptionForMobile:
+                            projectDescriptionForMobile:
                                 "'Expense Manager' is a Python GUI tikinter Based application , \nwhich is developed to keep tracking on daily expenses and \nas well as we can save money for predefine expenses\n which will help for future investment .",
-                            FirstTechnology: '',
-                            SecondTechnology: 'PYTHON',
-                            ThirdTechnology: ' , SQLite',
-                            ForthTechnology: '',
-                            ProjectUrl:
+                            firstTechnology: '',
+                            secondTechnology: 'PYTHON',
+                            thirdTechnology: ' , SQLite',
+                            fourthTechnology: '',
+                            projectUrl:
                                 "https://github.com/iamsouviki/ExpenseManager",
                           );
                         }

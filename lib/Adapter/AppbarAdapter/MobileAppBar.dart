@@ -12,6 +12,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: true,
+      iconTheme: IconThemeData(color: textPrimary),
       backgroundColor: Colors.transparent,
       shadowColor: Colors.transparent,
       actions: [

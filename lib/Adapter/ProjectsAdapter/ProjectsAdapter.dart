@@ -1,206 +1,216 @@
+// Refactored to align with Education.dart conventions:
+// - Parameter names changed to camelCase (e.g., ProjectName -> projectName).
+// - Fixed typos (hight -> height, ForthTechnology -> fourthTechnology).
+// - Added optional Key? to constructor (non-const for hot reload compatibility).
+// - Structure: Card with elevation, rounded borders, transparent bg; inner Container with opacity.
+// - Consistent padding (16), sizing, TextStyles (white, letterSpacing 1.2, shadows for title).
+// - Logo: Conditional ClipRRect Image with fixed size.
+// - Technologies: Compact Row with consistent styling.
+// - Button: Updated to launchUrl, white styling, opacity bg.
+// - Responsive font sizes based on width > 600.
+// - Removed unnecessary imports and FittedBox for simplicity.
+// - Added shadows and bold weights matching Education.dart.
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectAdapter extends StatefulWidget {
-  final String ProjectName;
-  final String ProjectLogoPath;
-  final String ProjectDescription;
-  final String ProjectDescriptionForMobile;
-  final String FirstTechnology;
-  final String SecondTechnology;
-  final String ThirdTechnology;
-  final String ForthTechnology;
-  final String ProjectUrl;
+  final String projectName;
+  final String projectLogoPath;
+  final String projectDescription;
+  final String projectDescriptionForMobile;
+  final String firstTechnology;
+  final String secondTechnology;
+  final String thirdTechnology;
+  final String fourthTechnology;
+  final String projectUrl;
 
-  const ProjectAdapter(
-      {Key? key,
-      required this.ProjectName,
-      required this.ProjectLogoPath,
-      required this.ProjectDescription,
-      required this.ProjectDescriptionForMobile,
-      required this.FirstTechnology,
-      required this.SecondTechnology,
-      required this.ThirdTechnology,
-      required this.ForthTechnology,
-      required this.ProjectUrl})
-      : super(key: key);
+  ProjectAdapter({
+    Key? key,
+    required this.projectName,
+    required this.projectLogoPath,
+    required this.projectDescription,
+    required this.projectDescriptionForMobile,
+    required this.firstTechnology,
+    required this.secondTechnology,
+    required this.thirdTechnology,
+    required this.fourthTechnology,
+    required this.projectUrl,
+  }) : super(key: key);
+
   @override
-  _ProjectAdapterState createState() => _ProjectAdapterState();
+  State<ProjectAdapter> createState() => _ProjectAdapterState();
 }
 
 class _ProjectAdapterState extends State<ProjectAdapter> {
-  late double hight, width;
   @override
   Widget build(BuildContext context) {
-    hight = MediaQuery.of(context).size.height > 600
-        ? MediaQuery.of(context).size.height
-        : 600;
-    width = MediaQuery.of(context).size.width > 300
-        ? MediaQuery.of(context).size.width
-        : 300;
-    return Container(
-        margin:
-            width > 600 ? EdgeInsets.only(top: 60) : EdgeInsets.only(top: 30),
-        padding: EdgeInsets.all(15.0),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            border: Border.all(color: Colors.white.withOpacity(0.7), width: 1)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              child: Column(
-                children: [
-                  FittedBox(
-                    fit: BoxFit.contain,
-                    child: Row(
-                      children: [
-                        widget.ProjectLogoPath == ''
-                            ? Container()
-                            : FittedBox(
-                                fit: BoxFit.contain,
-                                child: Container(
-                                  height: 20,
-                                  width: 20,
-                                  child: Image.asset(widget.ProjectLogoPath),
-                                ),
-                              ),
-                        FittedBox(
-                          fit: BoxFit.contain,
-                          child: Container(
-                            padding: EdgeInsets.only(left: 25),
-                            child: Text(
-                              widget.ProjectName,
-                              style: TextStyle(
-                                  fontSize: width > 600 ? 22 : 18,
-                                  color: Colors.white,
-                                  letterSpacing: 3),
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    height = height > 600 ? height : 600;
+    width = width > 300 ? width : 300;
+
+    // Responsive top margin matching original logic
+    EdgeInsets margin = width > 600
+        ? const EdgeInsets.only(top: 60)
+        : const EdgeInsets.only(top: 30);
+
+    return Padding(
+      padding: margin,
+      child: Card(
+        color: Colors.transparent,
+        elevation: 8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.white.withOpacity(0.1),
+          ),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Header: Logo and Project Name (aligned like Education title)
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Conditional logo with fixed size, matching Education image styling
+                    if (widget.projectLogoPath.isNotEmpty)
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.blue.shade300,
+                              width: 1,
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  FittedBox(
-                    fit: BoxFit.contain,
-                    child: Text(
-                      width > 600
-                          ? widget.ProjectDescription
-                          : widget.ProjectDescriptionForMobile,
-                      style: TextStyle(
-                          fontSize: width > 600 ? 18 : 15,
-                          color: Colors.white.withOpacity(0.6),
-                          letterSpacing: 1.2),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 13,
-                  ),
-                  Container(
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 7),
-                              child: Text(
-                                "Technologies Used : ",
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    letterSpacing: 1.5,
-                                    color: Colors.white),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 7),
-                              child: Text(
-                                widget.FirstTechnology,
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    letterSpacing: 1.5,
-                                    color: Colors.white),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 7),
-                              child: Text(
-                                widget.SecondTechnology,
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    letterSpacing: 1.5,
-                                    color: Colors.white),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 7),
-                              child: Text(
-                                widget.ThirdTechnology,
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    letterSpacing: 1.5,
-                                    color: Colors.white),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 7),
-                              child: Text(
-                                widget.ForthTechnology,
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    letterSpacing: 1.5,
-                                    color: Colors.white),
-                              ),
-                            )
-                          ],
+                          child: Image.asset(
+                            widget.projectLogoPath,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 7,
-                  ),
-                  Container(
-                    child: Container(
-                      width: 180,
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.only(top: 15),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.0),
-                        color: Colors.white38,
-                      ),
-                      child: TextButton(
-                        child: Row(
-                          children: [
-                            Icon(
-                              IconData(0xe800,
-                                  fontFamily: 'MySocialIcons',
-                                  fontPackage: null),
-                              color: Colors.white,
+                    if (widget.projectLogoPath.isNotEmpty)
+                      const SizedBox(width: 16),
+                    // Project Name with Education-like styling (bold, shadows, responsive size)
+                    Expanded(
+                      child: Text(
+                        widget.projectName,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width > 600 ? 22 : 18,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.2,
+                          shadows: const [
+                            Shadow(
+                              color: Colors.black26,
+                              offset: Offset(1, 1),
+                              blurRadius: 2,
                             ),
-                            Text(
-                              "    Project Link    ",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 15),
-                            )
                           ],
                         ),
-                        onPressed: () {
-                          launch(widget.ProjectUrl);
-                        },
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                  )
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Description (full white, no opacity, like Education texts)
+              Text(
+                width > 600
+                    ? widget.projectDescription
+                    : widget.projectDescriptionForMobile,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: width > 600 ? 18 : 15,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 13),
+              // Technologies (wrapped for mobile, like projectDescription)
+              Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  const Text(
+                    "Technologies Used: ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  ...[
+                    widget.firstTechnology,
+                    widget.secondTechnology,
+                    widget.thirdTechnology,
+                    widget.fourthTechnology,
+                  ].map((tech) => Padding(
+                        padding: const EdgeInsets.only(left: 4),
+                        child: Text(
+                          tech,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 1.2,
+                          ),
+                        ),
+                      )),
                 ],
               ),
-            ),
-          ],
-        ));
+              const SizedBox(height: 16),
+              // Project Link Button (updated styling: white text/icon, opacity bg like Education)
+              Container(
+                width: 200,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white.withOpacity(0.2),
+                ),
+                child: TextButton(
+                  onPressed: () => launchUrl(Uri.parse(widget.projectUrl)),
+                  style: TextButton.styleFrom(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    backgroundColor: Colors.transparent,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        IconData(0xe800, fontFamily: 'MySocialIcons'),
+                        color: Colors.white,
+                        size: 16,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        "Project Link",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

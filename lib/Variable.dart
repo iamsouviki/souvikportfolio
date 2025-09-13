@@ -89,46 +89,112 @@ const List<Map<String, String>> Experiences = [
   }
 ];
 
-// UI Constants for Modern Design
-const Color primaryColor = Colors.blue;
-const Color secondaryColor = Colors.blueAccent;
-const Color surfaceColor = Color(0xFF121212);
-const Color backgroundColor = Colors.black;
+// Modern UI Theme Constants
+const Color primaryColor = Color(0xFF6366F1); // Indigo 600
+const Color primaryVariant = Color(0xFF4F46E5); // Indigo 700
+const Color secondaryColor = Color(0xFF14B8A6); // Teal 500
+const Color secondaryVariant = Color(0xFF0D9488); // Teal 600
+const Color surfaceColor = Color(0xFF1F2937); // Grey 800
+const Color backgroundColor = Color(0xFF111827); // Grey 900
 const Color textPrimary = Colors.white;
-const Color textSecondary = Colors.grey;
+const Color textSecondary = Color(0xFFB3B3B3); // Grey 400
+const Color errorColor = Color(0xFFEF4444); // Red 500
+const Color successColor = Color(0xFF10B981); // Emerald 500
+const Color buttonShadowColor =
+    Color(0x4D4F46E5); // primaryVariant with 0.3 opacity
 
+// Gradients
+const LinearGradient primaryGradient = LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [primaryColor, primaryVariant],
+);
+const LinearGradient backgroundGradient = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [backgroundColor, surfaceColor],
+);
+
+// Text Styles with Ubuntu font
 const TextStyle headingStyle = TextStyle(
   fontFamily: 'Ubuntu',
-  fontWeight: FontWeight.bold,
-  fontSize: 28,
+  fontWeight: FontWeight.w700,
+  fontSize: 32,
   color: textPrimary,
+  letterSpacing: 0.5,
+  shadows: [
+    Shadow(
+      offset: Offset(0, 2),
+      blurRadius: 4,
+      color: Colors.black54,
+    ),
+  ],
 );
 
 const TextStyle subHeadingStyle = TextStyle(
   fontFamily: 'Ubuntu',
-  fontWeight: FontWeight.w500,
-  fontSize: 20,
+  fontWeight: FontWeight.w600,
+  fontSize: 24,
   color: textPrimary,
+  letterSpacing: 0.25,
 );
 
 const TextStyle bodyStyle = TextStyle(
   fontFamily: 'Ubuntu',
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.w400,
   fontSize: 16,
   color: textSecondary,
-  height: 1.5,
+  height: 1.6,
+  letterSpacing: 0.1,
 );
 
 const TextStyle skillStyle = TextStyle(
   fontFamily: 'Ubuntu',
   fontWeight: FontWeight.w500,
-  fontSize: 14,
+  fontSize: 16,
   color: textPrimary,
+  letterSpacing: 0.3,
 );
 
-// Spacings
+const TextStyle buttonTextStyle = TextStyle(
+  fontFamily: 'Ubuntu',
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  color: textPrimary,
+  letterSpacing: 0.5,
+);
+
+// Decorations
+const BoxDecoration cardDecoration = BoxDecoration(
+  color: surfaceColor,
+  borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.black26,
+      blurRadius: 8,
+      offset: Offset(0, 4),
+    ),
+  ],
+);
+
+const BoxDecoration buttonDecoration = BoxDecoration(
+  gradient: primaryGradient,
+  borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+  boxShadow: [
+    BoxShadow(
+      color: buttonShadowColor,
+      blurRadius: 6,
+      offset: Offset(0, 3),
+    ),
+  ],
+);
+
+// Spacings and Sizes
 const double smallPadding = 8.0;
 const double mediumPadding = 16.0;
 const double largePadding = 24.0;
-const double cardElevation = 4.0;
-const double borderRadius = 12.0;
+const double extraLargePadding = 32.0;
+const double cardElevation = 8.0;
+const double borderRadius = 16.0;
+const double iconSize = 28.0;
+const double avatarSize = 120.0; // For profile photo

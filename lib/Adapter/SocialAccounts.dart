@@ -40,17 +40,33 @@ class SocialAccounts extends StatelessWidget {
       onTap: () {
         launch(url);
       },
-      borderRadius: BorderRadius.circular(50),
+      borderRadius: BorderRadius.circular(30),
+      splashColor: secondaryColor.withOpacity(0.2),
+      highlightColor: secondaryColor.withOpacity(0.1),
       child: Container(
-        padding: EdgeInsets.all(12),
+        width: 60,
+        height: 60,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(50),
+          color: surfaceColor,
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 4,
+              offset: Offset(0, 2),
+            ),
+          ],
+          border: Border.all(
+            color: primaryColor.withOpacity(0.2),
+            width: 1,
+          ),
         ),
-        child: Icon(
-          iconData,
-          color: Colors.white,
-          size: 28,
+        child: Center(
+          child: Icon(
+            iconData,
+            color: secondaryColor,
+            size: iconSize,
+          ),
         ),
       ),
     );

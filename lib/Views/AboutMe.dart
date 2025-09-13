@@ -45,7 +45,13 @@ class _AboutMeState extends State<AboutMe> {
                 padding: EdgeInsets.all(15),
                 children: [
                   Column(
-                    children: [About(), Education(), Skill()],
+                    children: [
+                      About(),
+                      SizedBox(height: 25.0),
+                      Education(),
+                      SizedBox(height: 25.0),
+                      Skill(),
+                    ],
                   ),
                 ],
               ),
