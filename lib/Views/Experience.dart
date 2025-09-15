@@ -54,6 +54,7 @@ class _ExperienceState extends State<Experience> {
     width = MediaQuery.of(context).size.width > 300
         ? MediaQuery.of(context).size.width
         : 300;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       drawer: width < 600 ? MobileDrawer() : Container(),
       appBar: PreferredSize(
@@ -104,22 +105,6 @@ class _ExperienceState extends State<Experience> {
                     ),
                   ),
                 ],
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 20,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Text(
-                "Design & Build by Souvik with ❤ Flutter",
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 216, 214, 214),
-                  fontSize: 10,
-                  letterSpacing: 1.2,
-                  height: 1.3,
-                ),
               ),
             ),
           ),

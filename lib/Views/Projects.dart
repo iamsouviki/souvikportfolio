@@ -25,6 +25,7 @@ class _ProjectsState extends State<Projects> {
     width = MediaQuery.of(context).size.width > 300
         ? MediaQuery.of(context).size.width
         : 300;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       drawer: width < 600 ? MobileDrawer() : Container(),
       appBar: PreferredSize(
@@ -171,18 +172,6 @@ class _ProjectsState extends State<Projects> {
                     ),
                   ),
                 ],
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                "Design & Build by Souvik with ❤ Flutter",
-                style: TextStyle(color: Colors.white, fontSize: 12),
               ),
             ),
           ),
