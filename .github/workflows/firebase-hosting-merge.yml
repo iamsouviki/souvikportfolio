@@ -22,7 +22,7 @@ jobs:
         run: flutter pub get
       
       - name: Build web (optimized)
-        run: flutter build web --release --web-renderer canvaskit --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://www.gstatic.com/flutter-canvaskit/
+        run: flutter build web --release --web-renderer canvaskit
       
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
