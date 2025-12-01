@@ -32,95 +32,22 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   
-  <style>
-    /* Loading spinner styles */
-    #flutter-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0175C2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-top: 4px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
 </head>
 <body>
-  <!-- Loading indicator shown while Flutter initializes -->
-  <div id="flutter-loader">
-    <div class="spinner"></div>
-  </div>
-  
+  <script src="flutter.js" defer></script>
   <script>
-    var scriptLoaded = false;
-    function loadMainDartJs() {
-      if (scriptLoaded) {
-        return;
-      }
-      scriptLoaded = true;
-      var scriptTag = document.createElement('script');
-      scriptTag.src = 'main.dart.js';
-      scriptTag.type = 'text/javascript';
-      scriptTag.onload = function() {
-        // Remove loading spinner when Flutter app loads
-        var loader = document.getElementById('flutter-loader');
-        if (loader) {
-          loader.style.display = 'none';
-        }
-      };
-      document.body.append(scriptTag);
-    }
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js')
-          .then(function(reg) {
-            if (reg.active) {
-              console.log('Loading app from service worker.');
-              loadMainDartJs();
-            } else if (reg.installing || reg.waiting) {
-              var sw = reg.installing || reg.waiting;
-              sw.addEventListener('statechange', function() {
-                if (sw.state === 'activated') {
-                  console.log('Installed new service worker.');
-                  loadMainDartJs();
-                }
-              });
-            }
-          })
-          .catch(function(err) {
-            console.warn('Service worker registration failed:', err);
-            loadMainDartJs();
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: null,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
           });
-
-        // Fallback if service worker doesn't load in time
-        setTimeout(function() {
-          if (!scriptLoaded) {
-            console.warn('Falling back to plain script tag.');
-            loadMainDartJs();
-          }
-        }, 4000);
+        }
       });
-    } else {
-      loadMainDartJs();
-    }
+    });
   </script>
 </body>
 </html>
