@@ -3,6 +3,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../Variable.dart';
 
+// Define constant IconData for custom social icons
+const IconData linkedInIcon = IconData(0xe806, fontFamily: 'MySocialIcons');
+const IconData githubIcon = IconData(0xe800, fontFamily: 'MySocialIcons');
+const IconData twitterIcon = IconData(0xe802, fontFamily: 'MySocialIcons');
+const IconData instagramIcon = IconData(0xe804, fontFamily: 'MySocialIcons');
+const IconData facebookIcon = IconData(0xe801, fontFamily: 'MySocialIcons');
+
 class SocialAccounts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,22 +19,17 @@ class SocialAccounts extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: 20),
-          _buildSocialIcon(Icons.mail_outline, "mailto:" + MAIL_ID),
+          _buildSocialIcon(Icons.mail_outline, "mailto:$MAIL_ID"),
           SizedBox(height: 15),
-          _buildSocialIcon(
-              IconData(0xe806, fontFamily: 'MySocialIcons'), LINKEDLN_URL),
+          _buildSocialIcon(linkedInIcon, LINKEDLN_URL),
           SizedBox(height: 15),
-          _buildSocialIcon(
-              IconData(0xe800, fontFamily: 'MySocialIcons'), GITHUB_URL),
+          _buildSocialIcon(githubIcon, GITHUB_URL),
           SizedBox(height: 15),
-          _buildSocialIcon(
-              IconData(0xe802, fontFamily: 'MySocialIcons'), TWITTER_URL),
+          _buildSocialIcon(twitterIcon, TWITTER_URL),
           SizedBox(height: 15),
-          _buildSocialIcon(
-              IconData(0xe804, fontFamily: 'MySocialIcons'), INSTAGRAM_URL),
+          _buildSocialIcon(instagramIcon, INSTAGRAM_URL),
           SizedBox(height: 15),
-          _buildSocialIcon(
-              IconData(0xe801, fontFamily: 'MySocialIcons'), FACEBOOK_URL),
+          _buildSocialIcon(facebookIcon, FACEBOOK_URL),
         ],
       ),
     );
