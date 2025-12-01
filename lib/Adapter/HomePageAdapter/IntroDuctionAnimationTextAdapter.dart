@@ -112,8 +112,8 @@ class _IntroDuctionAnimationTextAdapterState
                         style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
                       onPressed: () {
-                        launch(
-                            "https://drive.google.com/file/d/1HbY7VxRYM69xoh4hxY-ARCx5wnfBVzG9/view?usp=sharing");
+                        launchUrl(Uri.parse(
+                            "https://drive.google.com/file/d/1HbY7VxRYM69xoh4hxY-ARCx5wnfBVzG9/view?usp=sharing"));
                       },
                     ),
                   );
