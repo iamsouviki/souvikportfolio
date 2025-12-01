@@ -34,18 +34,33 @@
   
 </head>
 <body>
+  <!-- Preload Flutter web assets -->
+  <link rel="preload" href="main.dart.js" as="script">
+  
   <script>
-    // Import and run the main.dart.js script
-    const script = document.createElement('script');
-    script.src = 'main.dart.js';
-    script.type = 'application/javascript';
-    script.onload = function() {
-      console.log('Flutter app loaded successfully');
+    // Configure Flutter web
+    _flutter = {};
+    _flutter.loader = {
+      load: function(config) {
+        return new Promise(function(resolve, reject) {
+          // Load main.dart.js
+          const script = document.createElement('script');
+          script.src = 'main.dart.js';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
     };
-    script.onerror = function() {
-      console.error('Failed to load Flutter app');
-    };
-    document.body.appendChild(script);
+    
+    // Initialize Flutter when page loads
+    window.addEventListener('load', function() {
+      _flutter.loader.load({
+        serviceWorkerSettings: {
+          serviceWorkerVersion: null,
+        }
+      });
+    });
   </script>
 </body>
 </html>
