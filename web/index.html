@@ -34,21 +34,18 @@
   
 </head>
 <body>
-  <script src="flutter.js" defer></script>
   <script>
-    // ignore: deprecated_member_use
-    window.addEventListener('load', function(ev) {
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: null,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
+    // Import and run the main.dart.js script
+    const script = document.createElement('script');
+    script.src = 'main.dart.js';
+    script.type = 'application/javascript';
+    script.onload = function() {
+      console.log('Flutter app loaded successfully');
+    };
+    script.onerror = function() {
+      console.error('Failed to load Flutter app');
+    };
+    document.body.appendChild(script);
   </script>
 </body>
 </html>
