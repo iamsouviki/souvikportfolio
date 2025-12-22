@@ -1,4 +1,4 @@
-# 🚀 Modern Portfolio Template
+# 🚀 Modern Portfolio Template by Souvik
 
 A stunning, fully responsive portfolio website built with **React.js**, **Tailwind CSS**, and **Framer Motion**. Create your own professional portfolio in minutes by simply updating the configuration file!
 
