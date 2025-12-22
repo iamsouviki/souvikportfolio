@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MySocialIcons';
+  src: url('/assets/fonts/MySocialIcons.ttf') format('truetype');
+}
+
+@layer base {
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-background text-textPrimary font-ubuntu antialiased overflow-x-hidden;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(20, 184, 166, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(20, 184, 166, 0.1) 0px, transparent 50%);
+  }
+
+  * {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary to-primary-dark;
+  }
+
+  .gradient-background {
+    @apply bg-gradient-to-b from-background to-surface;
+    position: relative;
+  }
+
+  .gradient-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.15) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    33% {
+      transform: translate(30px, -30px);
+    }
+
+    66% {
+      transform: translate(-20px, 20px);
+    }
+  }
+
+  .card {
+    @apply bg-surface/80 backdrop-blur-md rounded-2xl shadow-card p-6 border border-primary/10;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    @apply border-primary/30 shadow-glow;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply gradient-primary text-white font-semibold px-6 py-3 rounded-2xl shadow-glow hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  .btn-primary:hover::before {
+    transform: translateX(100%);
+  }
+
+  .skill-bar {
+    @apply h-3 rounded-full bg-surface overflow-hidden relative;
+  }
+
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .skill-fill {
+    @apply h-full gradient-primary transition-all duration-1000 ease-out relative;
+  }
+
+  .skill-fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.54);
+  }
+
+  .neon-glow {
+    text-shadow:
+      0 0 10px rgba(99, 102, 241, 0.5),
+      0 0 20px rgba(99, 102, 241, 0.3),
+      0 0 30px rgba(99, 102, 241, 0.2);
+  }
+
+  .glass {
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  /* Responsive text utilities */
+  .break-words {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .text-wrap {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}

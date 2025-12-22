@@ -8,20 +8,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          flutter-version: '3.24.0'
-          channel: 'stable'
-          cache: true
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build React app
+        run: npm run build
       
-      - name: Get dependencies
-        run: flutter pub get
-      
-      - name: Build web (optimized)
-        run: flutter build web --release --web-renderer canvaskit
-      
-      - name: Deploy to Firebase
+      - name: Deploy to Firebase Preview
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
