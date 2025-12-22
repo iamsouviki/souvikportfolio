@@ -80,7 +80,7 @@ export const CERTIFICATIONS = [
         issuer: 'Google',
         date: '2024',
         credentialUrl: 'https://www.credly.com/badges/1752e0b7-85a2-4a4b-bc4f-f33162dd6529/linked_in_profile',
-        logo: 'https://images.credly.com/images/44994cda-b7b0-44cb-9a6e-548c6e6b8e4a/image.png',
+        logo: '/assets/images/google-ai-cert.png',
         description: 'Advanced certification in Generative AI technologies and leadership',
     },
 ];
