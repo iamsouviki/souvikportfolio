@@ -7,7 +7,7 @@ const ProjectCard = ({ project, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="card group hover:shadow-glow transition-all duration-300"
+      className="card group hover:shadow-glow transition-all duration-300 tilt-hover spotlight"
     >
       <div className="flex flex-col md:flex-row gap-6">
         {project.logo && (
@@ -51,7 +51,7 @@ const ProjectCard = ({ project, index }) => {
                 <span
                   key={i}
                   className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs md:text-sm 
-                             font-medium hover:bg-primary/30 transition-colors break-words"
+                             font-medium hover:bg-primary/30 transition-colors break-words rotate-scale-hover"
                 >
                   {tech}
                 </span>

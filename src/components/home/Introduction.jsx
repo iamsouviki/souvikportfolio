@@ -7,9 +7,9 @@ import { scrollToSection } from '../../utils/scrollUtils';
 const Introduction = () => {
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh] relative">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* Decorative elements with floating animation */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl float-animation" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '3s' }} />
       
       {/* Text Content */}
       <motion.div
@@ -37,7 +37,7 @@ const Introduction = () => {
         >
           <button 
             onClick={() => scrollToSection('about')}
-            className="btn-primary group relative overflow-hidden"
+            className="btn-primary group relative overflow-hidden magnetic-hover pulse-glow"
           >
             <span className="relative z-10">About Me</span>
           </button>
@@ -47,7 +47,7 @@ const Introduction = () => {
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-2xl border-2 border-primary text-primary 
                        font-semibold hover:bg-primary hover:text-white transition-all 
-                       duration-300 relative overflow-hidden group"
+                       duration-300 relative overflow-hidden group magnetic-hover ripple"
           >
             <span className="relative z-10">Download CV</span>
             <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />

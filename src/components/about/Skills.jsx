@@ -31,9 +31,9 @@ const Skills = () => {
       <div className="flex flex-wrap gap-3 mb-8">
         <button
           onClick={() => setSelectedCategory('All')}
-          className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+          className={`px-4 py-2 rounded-full font-medium transition-all duration-300 magnetic-hover ${
             selectedCategory === 'All'
-              ? 'gradient-primary text-white shadow-glow'
+              ? 'gradient-primary text-white shadow-glow pulse-glow'
               : 'bg-surface text-textSecondary hover:text-primary'
           }`}
         >
@@ -43,9 +43,9 @@ const Skills = () => {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+            className={`px-4 py-2 rounded-full font-medium transition-all duration-300 magnetic-hover ${
               selectedCategory === category
-                ? 'gradient-primary text-white shadow-glow'
+                ? 'gradient-primary text-white shadow-glow pulse-glow'
                 : 'bg-surface text-textSecondary hover:text-primary'
             }`}
           >
