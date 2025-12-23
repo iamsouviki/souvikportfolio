@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import AnimatedIntro from './AnimatedIntro';
 import ProfilePhoto from './ProfilePhoto';
 import { PERSONAL_INFO } from '../../config/constants';
+import { scrollToSection } from '../../utils/scrollUtils';
 
 const Introduction = () => {
   return (
@@ -35,12 +35,12 @@ const Introduction = () => {
           transition={{ delay: 2.5, duration: 0.6 }}
           className="mt-8 flex gap-4 flex-wrap"
         >
-          <Link 
-            to="/about" 
+          <button 
+            onClick={() => scrollToSection('about')}
             className="btn-primary group relative overflow-hidden"
           >
             <span className="relative z-10">About Me</span>
-          </Link>
+          </button>
           <a
             href={PERSONAL_INFO.resumeUrl}
             target="_blank"

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { PERSONAL_INFO } from '../../config/constants';
+import { scrollToSection } from '../../utils/scrollUtils';
 import MobileDrawer from './MobileDrawer';
 
 const MobileAppBar = () => {
@@ -9,11 +9,14 @@ const MobileAppBar = () => {
 
   return (
     <>
-      <nav className="bg-surface/80 backdrop-blur-md shadow-lg sticky top-0 z-40">
+      <nav className="bg-surface/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-50">
         <div className="px-4 py-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold gradient-primary bg-clip-text text-transparent">
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="text-xl font-bold gradient-primary bg-clip-text text-transparent"
+          >
             {PERSONAL_INFO.name}
-          </Link>
+          </button>
           
           <button
             onClick={() => setIsDrawerOpen(true)}

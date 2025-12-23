@@ -1,15 +1,21 @@
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa';
-import { ROUTES, SOCIAL_LINKS } from '../../config/constants';
+import { SOCIAL_LINKS } from '../../config/constants';
+import { scrollToSection } from '../../utils/scrollUtils';
 
 const MobileDrawer = ({ isOpen, onClose }) => {
   const navLinks = [
-    { path: ROUTES.home, label: 'Home' },
-    { path: ROUTES.about, label: 'About' },
-    { path: ROUTES.experience, label: 'Experience' },
-    { path: ROUTES.projects, label: 'Projects' },
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
   ];
+
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
+    // Close drawer after a short delay for smooth UX
+    setTimeout(() => onClose(), 300);
+  };
 
   const socialIcons = [
     { icon: FaLinkedin, url: SOCIAL_LINKS.linkedin, label: 'LinkedIn' },
@@ -43,23 +49,22 @@ const MobileDrawer = ({ isOpen, onClose }) => {
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-2xl text-textPrimary hover:text-primary"
+              className="absolute top-4 right-4 text-2xl text-textPrimary hover:text-primary transition-colors duration-300"
               aria-label="Close menu"
             >
               <FaTimes />
             </button>
             
             <nav className="mt-12 flex flex-col gap-6">
-              {navLinks.map(({ path, label }) => (
-                <Link
-                  key={path}
-                  to={path}
-                  onClick={onClose}
+              {navLinks.map(({ id, label }) => (
+                <button
+                  key={id}
+                  onClick={() => handleNavClick(id)}
                   className="text-lg font-medium text-textSecondary hover:text-primary 
-                             transition-colors duration-300"
+                             transition-all duration-300 text-left hover:translate-x-2"
                 >
                   {label}
-                </Link>
+                </button>
               ))}
             </nav>
 
