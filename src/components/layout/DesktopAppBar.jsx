@@ -20,7 +20,7 @@ const DesktopAppBar = ({ activeSection }) => {
         <div className="flex justify-between items-center">
           <button
             onClick={() => handleNavClick('home')}
-            className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 relative group focus:outline-none"
+            className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent hover:scale-105 active:scale-95 transition-all duration-300 relative group focus:outline-none"
           >
             <span className="relative z-10">{PERSONAL_INFO.name}</span>
             <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -31,7 +31,7 @@ const DesktopAppBar = ({ activeSection }) => {
               <button
                 key={id}
                 onClick={() => handleNavClick(id)}
-                className={`px-3 py-2 rounded-lg font-bold transition-all duration-300 relative overflow-hidden group focus:outline-none
+                className={`px-3 py-2 rounded-lg font-bold transition-all duration-300 relative overflow-hidden group focus:outline-none active:scale-95
                   ${activeSection === id
                     ? 'text-white'
                     : 'text-textSecondary hover:text-white'}`}
