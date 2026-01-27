@@ -20,10 +20,10 @@ const CustomCursor = () => {
       rafId = requestAnimationFrame(() => {
         setPosition({ x: e.clientX, y: e.clientY });
 
-        // Add trail particle - reduced frequency
-        if (Math.random() > 0.7) { // Only add 30% of the time for performance
+        // Add trail particle - highly optimized
+        if (Math.random() > 0.8) { // Only add 20% of the time (was 30%)
           const trailId = trailIdRef.current++;
-          setTrails(prev => [...prev.slice(-3), { // Reduced from 8 to 3
+          setTrails(prev => [...prev.slice(-2), { // Keep only last 2 (was 3)
             id: trailId,
             x: e.clientX,
             y: e.clientY
@@ -32,13 +32,13 @@ const CustomCursor = () => {
           // Remove old trails
           setTimeout(() => {
             setTrails(prev => prev.filter(t => t.id !== trailId));
-          }, 400); // Reduced from 600ms
+          }, 300); // Reduced duration (was 400ms)
         }
 
-        // Add spider web node
-        if (Math.random() > 0.8) { // Only add 20% of the time
+        // Add spider web node - optimized
+        if (Math.random() > 0.9) { // Only add 10% of the time (was 20%)
           const nodeId = Date.now();
-          setWebNodes(prev => [...prev.slice(-8), { // Keep last 8 nodes
+          setWebNodes(prev => [...prev.slice(-5), { // Keep last 5 nodes (was 8)
             id: nodeId,
             x: e.clientX,
             y: e.clientY,
@@ -48,7 +48,7 @@ const CustomCursor = () => {
           // Remove old nodes
           setTimeout(() => {
             setWebNodes(prev => prev.filter(n => n.id !== nodeId));
-          }, 1200); // Nodes disappear after 1.2s
+          }, 1000); // Nodes disappear after 1s (was 1.2s)
         }
 
         rafId = null;
