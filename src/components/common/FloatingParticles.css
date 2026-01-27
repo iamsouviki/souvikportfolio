@@ -1,0 +1,69 @@
+.floating-particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.03),
+            transparent);
+    filter: blur(40px);
+    animation: floatParticle linear infinite;
+    will-change: transform;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(var(--move-x, 30px), var(--move-y, -80px)) scale(1.2);
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate(var(--move-x-end, -20px), var(--move-y-end, -150px)) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Apply random movement to each particle */
+.floating-particle:nth-child(odd) {
+    --move-x: 50px;
+    --move-y: -100px;
+    --move-x-end: -30px;
+    --move-y-end: -180px;
+}
+
+.floating-particle:nth-child(even) {
+    --move-x: -40px;
+    --move-y: -90px;
+    --move-x-end: 25px;
+    --move-y-end: -160px;
+}
+
+.floating-particle:nth-child(3n) {
+    --move-x: 20px;
+    --move-y: -120px;
+    --move-x-end: -50px;
+    --move-y-end: -200px;
+}

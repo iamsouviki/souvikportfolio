@@ -19,25 +19,24 @@ const StatsSection = () => {
           className="card text-center group cursor-pointer relative overflow-hidden"
         >
           {/* Animated background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-gray-300/20
                           opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
+
           {/* Content */}
           <div className="relative z-10">
-            <div className="text-4xl md:text-5xl font-bold gradient-primary bg-clip-text 
-                            text-transparent mb-2 group-hover:scale-110 transition-transform 
-                            neon-glow">
+            <div className="text-4xl md:text-5xl font-bold gradient-primary bg-clip-text
+                            text-transparent mb-2 group-hover:scale-110 transition-transform">
               {stat.value}
             </div>
-            <div className="text-textSecondary text-sm md:text-base group-hover:text-textPrimary 
+            <div className="text-textSecondary text-sm md:text-base group-hover:text-textPrimary
                             transition-colors">
               {stat.label}
             </div>
           </div>
-          
+
           {/* Corner accent */}
-          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/30 
-                          to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 
+          <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-white/30
+                          to-transparent rounded-bl-full opacity-0 group-hover:opacity-100
                           transition-opacity duration-500" />
         </motion.div>
       ))}

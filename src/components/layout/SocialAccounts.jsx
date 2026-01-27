@@ -20,7 +20,7 @@ const SocialAccounts = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="text-textSecondary hover:text-primary transition-all duration-300 
+          className="text-textSecondary hover:text-white transition-all duration-300
                      hover:scale-110 text-2xl"
         >
           <Icon />

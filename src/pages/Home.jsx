@@ -24,7 +24,7 @@ const Home = () => {
   // Section wrapper component with scroll reveal
   const Section = ({ id, children, className = '', delay = 0 }) => {
     const { ref, isVisible } = useScrollReveal();
-    
+
     return (
       <section
         id={id}
@@ -87,7 +87,7 @@ const Home = () => {
             </h2>
             <div className="w-24 gradient-divider mx-auto mt-4" />
           </div>
-          
+
           <div className="space-y-6">
             {EXPERIENCES.map((experience, index) => (
               <ExperienceCard key={index} experience={experience} index={index} />
@@ -106,7 +106,7 @@ const Home = () => {
               Showcasing innovative solutions and creative implementations
             </p>
           </div>
-          
+
           <div className="space-y-6">
             {PROJECTS.map((project, index) => (
               <ProjectCard key={index} project={project} index={index} />
@@ -125,7 +125,7 @@ const Home = () => {
               Delivering high-quality solutions across web, mobile, and AI technologies
             </p>
           </div>
-          
+
           <ServicesGrid />
         </Section>
 

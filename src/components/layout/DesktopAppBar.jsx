@@ -2,7 +2,7 @@ import { PERSONAL_INFO } from '../../config/constants';
 import { scrollToSection } from '../../utils/scrollUtils';
 
 const DesktopAppBar = ({ activeSection }) => {
-  
+
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -15,34 +15,27 @@ const DesktopAppBar = ({ activeSection }) => {
   };
 
   return (
-    <nav className="bg-background fixed top-0 left-0 right-0 z-50 border-b border-primary/10">
-      <div className="max-w-7xl mx-auto px-6 py-5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background to-surface/95 backdrop-blur-xl border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <button
             onClick={() => handleNavClick('home')}
-            className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent hover:scale-105 active:scale-95 transition-all duration-300 relative group focus:outline-none"
+            className="text-lg font-bold text-white hover:text-gray-300 transition-colors duration-200 focus:outline-none"
           >
-            <span className="relative z-10">{PERSONAL_INFO.name}</span>
-            <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {PERSONAL_INFO.name}
           </button>
-          
-          <div className="flex gap-2">
+
+          <div className="flex gap-1">
             {navLinks.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => handleNavClick(id)}
-                className={`px-3 py-2 rounded-lg font-bold transition-all duration-300 relative overflow-hidden group focus:outline-none active:scale-95
+                className={`px-4 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none
                   ${activeSection === id
-                    ? 'text-white'
-                    : 'text-textSecondary hover:text-white'}`}
+                    ? 'bg-white text-black'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
               >
-                {activeSection === id && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg" />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10">{label}</span>
-                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300
-                  ${activeSection === id ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'}`} />
+                {label}
               </button>
             ))}
           </div>
@@ -53,4 +46,3 @@ const DesktopAppBar = ({ activeSection }) => {
 };
 
 export default DesktopAppBar;
-

@@ -1,0 +1,19 @@
+/* Background Web Animation */
+.background-web-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    mix-blend-mode: screen;
+}
+
+/* Hide on mobile for performance */
+@media (max-width: 768px) {
+    .background-web-canvas {
+        display: none;
+    }
+}

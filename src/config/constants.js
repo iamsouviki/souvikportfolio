@@ -18,7 +18,7 @@ export const PERSONAL_INFO = {
     // Google Drive link for CV - opens in new tab for viewing/downloading
     resumeUrl: 'https://drive.google.com/file/d/1HbY7VxRYM69xoh4hxY-ARCx5wnfBVzG9/view',
     location: 'India',
-    yearsOfExperience: '3+',
+    yearsOfExperience: '4+',
 };
 
 // About Section
@@ -115,6 +115,7 @@ export const SKILLS = [
     { name: 'MySQL', percentage: 85, category: 'Database' },
     { name: 'RESTful APIs', percentage: 92, category: 'Backend' },
     { name: 'Generative AI', percentage: 80, category: 'AI/ML' },
+    { name: 'RAG & AI Agent Integration', percentage: 80, category: 'AI/ML' },
     { name: 'Git & GitHub', percentage: 90, category: 'DevOps' },
     { name: 'Firebase', percentage: 85, category: 'Cloud' },
     { name: 'Docker', percentage: 75, category: 'DevOps' },

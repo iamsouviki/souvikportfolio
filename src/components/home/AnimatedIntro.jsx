@@ -25,10 +25,10 @@ const AnimatedIntro = () => {
         ]}
         wrapper="h2"
         speed={50}
-        className="text-3xl md:text-4xl font-semibold text-secondary"
+        className="text-3xl md:text-4xl font-semibold text-white"
         repeat={Infinity}
       />
-      <p className="text-textSecondary text-lg mt-4 italic">
+      <p className="text-gray-400 text-lg mt-4 italic">
         {PERSONAL_INFO.tagline}
       </p>
     </div>

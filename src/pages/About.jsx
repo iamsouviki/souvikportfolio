@@ -17,7 +17,7 @@ const About = () => {
       {isMobile ? <MobileAppBar /> : <DesktopAppBar />}
       <SocialAccounts />
       <ScrollToTop />
-      
+
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="space-y-8">
           <AboutSection />
@@ -25,7 +25,7 @@ const About = () => {
           <Skills />
           <Certifications />
           <ServicesPreview />
-          
+
           <p className="text-center text-textSecondary text-sm mt-12">
             Design & Build by Souvik with ❤ React + Tailwind CSS
           </p>

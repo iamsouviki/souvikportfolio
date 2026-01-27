@@ -8,9 +8,9 @@ const Introduction = () => {
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh] relative">
       {/* Decorative elements with floating animation */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl float-animation" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '3s' }} />
-      
+      <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl float-animation" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl float-animation" style={{ animationDelay: '3s' }} />
+
       {/* Text Content */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -19,7 +19,7 @@ const Introduction = () => {
         className="order-2 md:order-1 relative z-10"
       >
         <AnimatedIntro />
-        
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -28,14 +28,14 @@ const Introduction = () => {
         >
           {PERSONAL_INFO.professionDetails}
         </motion.p>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.5, duration: 0.6 }}
           className="mt-8 flex gap-4 flex-wrap"
         >
-          <button 
+          <button
             onClick={() => scrollToSection('about')}
             className="btn-primary group relative overflow-hidden magnetic-hover pulse-glow"
           >
@@ -45,16 +45,16 @@ const Introduction = () => {
             href={PERSONAL_INFO.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-2xl border-2 border-primary text-primary 
-                       font-semibold hover:bg-primary hover:text-white transition-all 
+            className="px-6 py-3 rounded-2xl border-2 border-white text-white
+                       font-semibold hover:bg-white hover:text-black transition-all
                        duration-300 relative overflow-hidden group magnetic-hover ripple"
           >
             <span className="relative z-10">Download CV</span>
-            <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
           </a>
         </motion.div>
       </motion.div>
-      
+
       {/* Profile Photo */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}

@@ -1,0 +1,145 @@
+/* Custom Cursor Styles - Black & White Theme */
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hide default cursor on body only */
+body {
+    cursor: none !important;
+}
+
+/* Ensure interactive elements still show custom cursor */
+a,
+button,
+[role="button"],
+input,
+textarea,
+select {
+    cursor: none !important;
+}
+
+/* Cursor dot - Optimized */
+.cursor-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Removed pulse animation for better performance */
+
+/* Cursor ring - Smaller and optimized */
+.cursor-ring {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease-out;
+    will-change: width, height;
+}
+
+/* Hovering state - Reduced size */
+.custom-cursor.hovering .cursor-ring {
+    width: 30px;
+    height: 30px;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-cursor.hovering .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* Clicking state - Reduced effects */
+.custom-cursor.clicking .cursor-ring {
+    width: 24px;
+    height: 24px;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-cursor.clicking .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.7);
+}
+
+/* Trail particles */
+.cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    animation: fade-out 0.4s ease-out forwards;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/* Spider Web Nodes */
+.web-node {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9997;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: pulse-node 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-node {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Spider Web Canvas */
+.spider-web-canvas {
+    mix-blend-mode: screen;
+    opacity: 0.7;
+}
+
+/* Mobile/Touch devices - restore default cursor */
+@media (hover: none) and (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+
+    .custom-cursor,
+    .cursor-trail,
+    .web-node,
+    .spider-web-canvas {
+        display: none;
+    }
+}

@@ -18,12 +18,12 @@ const Certifications = () => {
       className="card"
     >
       <div className="flex items-center gap-3 mb-8">
-        <FaAward className="text-4xl text-secondary" />
+        <FaAward className="text-4xl text-gray-400" />
         <h2 className="text-4xl font-bold gradient-primary bg-clip-text text-transparent">
           Certifications
         </h2>
       </div>
-      
+
       <div className="space-y-6">
         {CERTIFICATIONS.map((cert, index) => (
           <motion.div
@@ -45,27 +45,27 @@ const Certifications = () => {
                   crossOrigin="anonymous"
                 />
               ) : (
-                <div className="w-24 h-24 flex items-center justify-center bg-primary/20 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <FaCertificate className="text-5xl text-primary" />
+                <div className="w-24 h-24 flex items-center justify-center bg-white/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <FaCertificate className="text-5xl text-white" />
                 </div>
               )}
             </div>
-            
+
             {/* Certification Details */}
             <div className="flex-1">
-              <h3 className="text-xl md:text-2xl font-bold text-textPrimary mb-2 group-hover:text-primary transition-colors break-words">
+              <h3 className="text-xl md:text-2xl font-bold text-textPrimary mb-2 group-hover:text-white transition-colors break-words">
                 {cert.name}
               </h3>
-              <p className="text-secondary font-semibold mb-2 text-sm md:text-base">{cert.issuer}</p>
+              <p className="text-gray-400 font-semibold mb-2 text-sm md:text-base">{cert.issuer}</p>
               <p className="text-textSecondary text-xs md:text-sm mb-3">{cert.date}</p>
               <p className="text-textSecondary mb-4 text-sm md:text-base break-words">{cert.description}</p>
-              
+
               {cert.credentialUrl && (
                 <a
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-secondary 
+                  className="inline-flex items-center gap-2 text-white hover:text-gray-400
                              transition-colors font-medium text-sm md:text-base"
                 >
                   View Credential <FaExternalLinkAlt className="text-sm" />

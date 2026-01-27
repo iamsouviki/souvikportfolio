@@ -38,7 +38,7 @@ const MobileDrawer = ({ isOpen, onClose }) => {
             onClick={onClose}
             className="fixed inset-0 bg-black/60 z-50"
           />
-          
+
           {/* Drawer */}
           <motion.div
             initial={{ x: '-100%' }}
@@ -49,18 +49,18 @@ const MobileDrawer = ({ isOpen, onClose }) => {
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-2xl text-textPrimary hover:text-primary transition-colors duration-300"
+              className="absolute top-4 right-4 text-2xl text-textPrimary hover:text-white transition-colors duration-300"
               aria-label="Close menu"
             >
               <FaTimes />
             </button>
-            
+
             <nav className="mt-12 flex flex-col gap-6">
               {navLinks.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => handleNavClick(id)}
-                  className="text-lg font-medium text-textSecondary hover:text-primary 
+                  className="text-lg font-medium text-textSecondary hover:text-white
                              transition-all duration-300 text-left hover:translate-x-2"
                 >
                   {label}
@@ -78,7 +78,7 @@ const MobileDrawer = ({ isOpen, onClose }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="text-textSecondary hover:text-primary transition-all duration-300 
+                    className="text-textSecondary hover:text-white transition-all duration-300
                                hover:scale-110 text-xl"
                   >
                     <Icon />

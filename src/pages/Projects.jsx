@@ -15,7 +15,7 @@ const Projects = () => {
       {isMobile ? <MobileAppBar /> : <DesktopAppBar />}
       <SocialAccounts />
       <ScrollToTop />
-      
+
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="mb-12 text-center">
           <TypeAnimation
@@ -26,7 +26,7 @@ const Projects = () => {
             cursor={false}
           />
         </div>
-        
+
         <div className="space-y-6">
           {PROJECTS.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
