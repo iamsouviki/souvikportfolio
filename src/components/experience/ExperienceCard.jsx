@@ -14,6 +14,7 @@ const ExperienceCard = ({ experience, index }) => {
             <img
               src={experience.companyLogo}
               alt={experience.companyName}
+              loading="lazy"
               className="w-20 h-20 object-contain rounded-lg"
             />
           </div>

@@ -25,6 +25,7 @@ const AboutSection = () => {
           <img
             src={PERSONAL_INFO.imagePath}
             alt={PERSONAL_INFO.name}
+            loading="lazy"
             className="w-64 h-64 object-cover rounded-2xl shadow-glow"
           />
         </motion.div>

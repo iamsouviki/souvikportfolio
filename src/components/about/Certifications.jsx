@@ -40,6 +40,7 @@ const Certifications = () => {
                   src={cert.logo}
                   alt={cert.issuer}
                   onError={() => handleImageError(index)}
+                  loading="lazy"
                   className="w-24 h-24 object-contain rounded-lg group-hover:scale-110 transition-transform duration-300 bg-white/10 p-2"
                   crossOrigin="anonymous"
                 />

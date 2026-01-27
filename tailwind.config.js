@@ -12,8 +12,8 @@ export default {
           dark: '#6366F1',    // Indigo 500 (was 700)
         },
         secondary: {
-          DEFAULT: '#5EEAD4', // Lighter Teal 300 (was 500)
-          dark: '#2DD4BF',    // Teal 400 (was 600)
+          DEFAULT: '#A78BFA', // Soft Purple
+          dark: '#8B5CF6',    // Purple
         },
         surface: '#1F2937',   // Grey 800 (unchanged)
         background: '#111827', // Grey 900 (unchanged)

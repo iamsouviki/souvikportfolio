@@ -35,11 +35,11 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen gradient-background overflow-x-hidden">
+    <div className="h-screen gradient-background overflow-x-hidden overflow-y-auto" style={{ scrollBehavior: 'smooth' }}>
       {isMobile ? <MobileAppBar /> : <DesktopAppBar />}
       <SocialAccounts />
       <ScrollToTop />
-      
+
       <main className="max-w-7xl mx-auto px-4 md:px-8 pt-20">
         {/* Home Section */}
         <section id="home" className="py-12">

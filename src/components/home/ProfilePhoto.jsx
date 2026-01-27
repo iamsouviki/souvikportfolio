@@ -21,6 +21,7 @@ const ProfilePhoto = () => {
         transition={{ type: 'spring', stiffness: 300 }}
         src={PERSONAL_INFO.imagePath}
         alt={PERSONAL_INFO.name}
+        loading="lazy"
         className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full shadow-2xl"
       />
       
