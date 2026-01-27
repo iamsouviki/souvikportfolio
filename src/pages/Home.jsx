@@ -1,5 +1,6 @@
 import { useResponsive } from '../hooks/useResponsive';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useScrollSpy } from '../hooks/useScrollSpy';
 import MobileAppBar from '../components/layout/MobileAppBar';
 import DesktopAppBar from '../components/layout/DesktopAppBar';
 import SocialAccounts from '../components/layout/SocialAccounts';
@@ -17,6 +18,8 @@ import { EXPERIENCES, PROJECTS } from '../config/constants';
 
 const Home = () => {
   const { isMobile } = useResponsive();
+  const sectionIds = ['home', 'about', 'experience', 'projects', 'services'];
+  const activeSection = useScrollSpy(sectionIds, 100);
 
   // Section wrapper component with scroll reveal
   const Section = ({ id, children, className = '', delay = 0 }) => {
@@ -34,9 +37,22 @@ const Home = () => {
     );
   };
 
+  const getBackgroundClass = () => {
+    switch (activeSection) {
+      case 'about':
+        return 'bg-slate-800';
+      case 'experience':
+        return 'bg-slate-900';
+      case 'projects':
+        return 'bg-slate-800';
+      default:
+        return 'gradient-background';
+    }
+  };
+
   return (
-    <div className="h-screen gradient-background overflow-x-hidden overflow-y-auto" style={{ scrollBehavior: 'smooth' }}>
-      {isMobile ? <MobileAppBar /> : <DesktopAppBar />}
+    <div id="main-container" className={`h-screen ${getBackgroundClass()} overflow-x-hidden overflow-y-auto`} style={{ scrollBehavior: 'smooth' }}>
+      {isMobile ? <MobileAppBar /> : <DesktopAppBar activeSection={activeSection} />}
       <SocialAccounts />
       <ScrollToTop />
 

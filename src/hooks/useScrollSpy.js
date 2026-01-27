@@ -10,8 +10,11 @@ export const useScrollSpy = (sectionIds, offset = 100) => {
     const [activeSection, setActiveSection] = useState('');
 
     useEffect(() => {
+        const container = document.getElementById('main-container');
+        if (!container) return;
+
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + offset;
+            const scrollPosition = container.scrollTop + offset;
 
             // Find the current section
             for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -30,10 +33,10 @@ export const useScrollSpy = (sectionIds, offset = 100) => {
         handleScroll();
 
         // Add scroll listener
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        container.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            container.removeEventListener('scroll', handleScroll);
         };
     }, [sectionIds, offset]);
 
