@@ -5,18 +5,10 @@ import SplashScreen from './pages/SplashScreen';
 import Home from './pages/Home';
 import BackgroundWeb from './components/common/BackgroundWeb';
 
-// Lazy load non-critical components for better loading performance
-const CustomCursor = lazy(() => import('./components/common/CustomCursor'));
-const FloatingParticles = lazy(() => import('./components/common/FloatingParticles'));
-
 function App() {
   return (
-    <>
+    <div style={{ maxWidth: '100vw', overflowX: 'hidden', position: 'relative' }}>
       <BackgroundWeb />
-      <Suspense fallback={null}>
-        <FloatingParticles />
-        <CustomCursor />
-      </Suspense>
       <BrowserRouter>
         <Routes>
           <Route path={ROUTES.splash} element={<SplashScreen />} />
@@ -24,10 +16,8 @@ function App() {
           <Route path="*" element={<Navigate to={ROUTES.home} replace />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
 export default App;
-
-

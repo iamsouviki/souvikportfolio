@@ -8,41 +8,54 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#FFFFFF', // Pure white
-          dark: '#E5E5E5',    // Light gray
-          light: '#FFFFFF',   // Pure white
+          DEFAULT: '#00D4FF',
+          dark: '#0099CC',
+          light: '#66E5FF',
         },
         secondary: {
-          DEFAULT: '#A3A3A3', // Medium gray
-          dark: '#737373',    // Dark gray
-          light: '#D4D4D4',   // Light gray
+          DEFAULT: '#8B5CF6',
+          dark: '#6D28D9',
+          light: '#A78BFA',
         },
         accent: {
-          gold: '#FFFFFF',    // White
-          emerald: '#E5E5E5', // Light gray
-          rose: '#A3A3A3',    // Medium gray
+          pink: '#EC4899',
+          emerald: '#10B981',
+          gold: '#F59E0B',
         },
-        surface: '#0A0A0A',   // Almost black
-        background: '#000000', // Pure black
-        textPrimary: '#FFFFFF',  // White
-        textSecondary: '#A3A3A3', // Gray
-        error: '#FFFFFF',     // White
-        success: '#FFFFFF',   // White
+        neon: {
+          cyan: '#00D4FF',
+          purple: '#8B5CF6',
+          pink: '#EC4899',
+          green: '#10B981',
+        },
+        surface: '#0A0A0F',
+        background: '#000005',
+        textPrimary: '#FFFFFF',
+        textSecondary: '#94A3B8',
+        error: '#EF4444',
+        success: '#10B981',
       },
       fontFamily: {
         ubuntu: ['Ubuntu', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05)',
-        'glow-lg': '0 0 30px rgba(255, 255, 255, 0.15), 0 0 60px rgba(255, 255, 255, 0.08)',
-        'card': '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(255, 255, 255, 0.05)',
-        'premium': '0 10px 40px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.05)',
+        'glow-cyan': '0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1)',
+        'glow-purple': '0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.1)',
+        'glow-pink': '0 0 20px rgba(236, 72, 153, 0.3), 0 0 40px rgba(236, 72, 153, 0.1)',
+        'glow-green': '0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(16, 185, 129, 0.1)',
+        'glow': '0 0 20px rgba(0, 212, 255, 0.2), 0 0 40px rgba(139, 92, 246, 0.1)',
+        'glow-lg': '0 0 30px rgba(0, 212, 255, 0.3), 0 0 60px rgba(139, 92, 246, 0.15)',
+        'card': '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 212, 255, 0.05)',
+        'premium': '0 10px 40px rgba(0, 212, 255, 0.1), 0 0 20px rgba(139, 92, 246, 0.05)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',
         'slide-up': 'slideUp 0.6s ease-out',
         'pulse-glow': 'pulseGlow 2s infinite',
+        'float-3d': 'float3d 6s ease-in-out infinite',
+        'neon-border': 'neonBorder 3s linear infinite',
+        'gradient-shift': 'gradientShift 8s ease infinite',
       },
       keyframes: {
         fadeIn: {
@@ -54,8 +67,22 @@ export default {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(99, 102, 241, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(139, 92, 246, 0.3)' },
+        },
+        float3d: {
+          '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
+          '50%': { transform: 'translateY(-15px) rotateX(3deg)' },
+        },
+        neonBorder: {
+          '0%, 100%': { borderColor: 'rgba(0, 212, 255, 0.5)' },
+          '33%': { borderColor: 'rgba(139, 92, 246, 0.5)' },
+          '66%': { borderColor: 'rgba(236, 72, 153, 0.5)' },
+        },
+        gradientShift: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
       },
     },

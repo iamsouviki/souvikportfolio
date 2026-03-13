@@ -5,7 +5,14 @@ const AnimatedIntro = () => {
   return (
     <div>
       <h2 className="text-textSecondary text-xl mb-2">Hi, I'm</h2>
-      <h1 className="text-5xl md:text-7xl font-bold gradient-primary bg-clip-text text-transparent mb-4">
+      <h1
+        className="text-5xl md:text-7xl font-bold mb-4"
+        style={{
+          background: 'linear-gradient(135deg, #00D4FF 0%, #8B5CF6 50%, #EC4899 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
         {PERSONAL_INFO.name}
       </h1>
       <TypeAnimation
@@ -25,10 +32,10 @@ const AnimatedIntro = () => {
         ]}
         wrapper="h2"
         speed={50}
-        className="text-3xl md:text-4xl font-semibold text-white"
+        className="text-3xl md:text-4xl font-semibold text-neon-cyan"
         repeat={Infinity}
       />
-      <p className="text-gray-400 text-lg mt-4 italic">
+      <p className="text-textSecondary text-lg mt-4 italic">
         {PERSONAL_INFO.tagline}
       </p>
     </div>
@@ -36,4 +43,3 @@ const AnimatedIntro = () => {
 };
 
 export default AnimatedIntro;
-

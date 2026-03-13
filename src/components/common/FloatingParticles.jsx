@@ -6,9 +6,9 @@ const FloatingParticles = () => {
   const particlesRef = useRef([]);
 
   useEffect(() => {
-    // Create particles - reduced count for performance
-    const particleCount = 5; // Reduced from 15
+    const particleCount = 6;
     const particles = [];
+    const colors = ['#00D4FF', '#8B5CF6', '#EC4899', '#10B981', '#F59E0B', '#00D4FF'];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -18,6 +18,7 @@ const FloatingParticles = () => {
         size: Math.random() * 60 + 20,
         duration: Math.random() * 20 + 15,
         delay: Math.random() * 5,
+        color: colors[i % colors.length],
       });
     }
 
@@ -37,6 +38,7 @@ const FloatingParticles = () => {
             height: `${particle.size}px`,
             animationDuration: `${particle.duration}s`,
             animationDelay: `${particle.delay}s`,
+            background: `radial-gradient(circle, ${particle.color}15, transparent)`,
           }}
         />
       ))}

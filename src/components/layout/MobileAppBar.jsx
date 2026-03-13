@@ -9,18 +9,31 @@ const MobileAppBar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background to-surface/95 backdrop-blur-xl border-b border-white/10">
+      <nav
+        className="fixed top-0 left-0 right-0 z-50"
+        style={{
+          background: 'rgba(0, 0, 5, 0.85)',
+          backdropFilter: 'blur(20px) saturate(180%)',
+          borderBottom: '1px solid rgba(0, 212, 255, 0.1)',
+        }}
+      >
         <div className="px-4 py-3 flex justify-between items-center">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-lg font-bold text-white hover:text-gray-300 transition-colors"
+            className="text-lg font-bold transition-colors"
+            style={{
+              background: 'linear-gradient(135deg, #00D4FF, #8B5CF6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
           >
             {PERSONAL_INFO.name}
           </button>
 
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="text-xl text-white hover:text-gray-300 transition-colors p-2 hover:bg-white/10 rounded-lg"
+            className="text-xl p-2 rounded-lg transition-all duration-300"
+            style={{ color: '#00D4FF' }}
             aria-label="Open menu"
           >
             <FaBars />

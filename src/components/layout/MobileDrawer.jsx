@@ -9,11 +9,11 @@ const MobileDrawer = ({ isOpen, onClose }) => {
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'services', label: 'Services' },
   ];
 
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId);
-    // Close drawer after a short delay for smooth UX
     setTimeout(() => onClose(), 300);
   };
 
@@ -26,60 +26,83 @@ const MobileDrawer = ({ isOpen, onClose }) => {
     { icon: FaEnvelope, url: `mailto:${SOCIAL_LINKS.email}`, label: 'Email' },
   ];
 
+  const neonColors = ['#00D4FF', '#8B5CF6', '#EC4899', '#10B981', '#F59E0B'];
+
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 z-50"
+            className="fixed inset-0 z-50"
+            style={{ background: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(4px)' }}
           />
 
-          {/* Drawer */}
           <motion.div
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', damping: 25 }}
-            className="fixed left-0 top-0 h-full w-64 bg-surface shadow-2xl z-50 p-6"
+            className="fixed left-0 top-0 h-full w-72 z-50 p-6"
+            style={{
+              background: 'rgba(10, 10, 20, 0.95)',
+              backdropFilter: 'blur(20px)',
+              borderRight: '1px solid rgba(0, 212, 255, 0.15)',
+              boxShadow: '10px 0 40px rgba(0, 0, 0, 0.5)',
+            }}
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-2xl text-textPrimary hover:text-white transition-colors duration-300"
+              className="absolute top-4 right-4 text-2xl transition-colors duration-300"
+              style={{ color: '#EC4899' }}
               aria-label="Close menu"
             >
               <FaTimes />
             </button>
 
-            <nav className="mt-12 flex flex-col gap-6">
-              {navLinks.map(({ id, label }) => (
-                <button
+            <nav className="mt-12 flex flex-col gap-4">
+              {navLinks.map(({ id, label }, index) => (
+                <motion.button
                   key={id}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 + index * 0.05 }}
                   onClick={() => handleNavClick(id)}
-                  className="text-lg font-medium text-textSecondary hover:text-white
-                             transition-all duration-300 text-left hover:translate-x-2"
+                  className="text-lg font-medium transition-all duration-300 text-left px-3 py-2 rounded-lg"
+                  style={{ color: '#94A3B8' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = neonColors[index % neonColors.length];
+                    e.currentTarget.style.background = `${neonColors[index % neonColors.length]}10`;
+                    e.currentTarget.style.transform = 'translateX(8px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#94A3B8';
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.transform = 'translateX(0)';
+                  }}
                 >
                   {label}
-                </button>
+                </motion.button>
               ))}
             </nav>
 
-            {/* Social Icons in Drawer */}
             <div className="absolute bottom-8 left-6 right-6">
+              <div className="w-full h-px mb-6" style={{ background: 'linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent)' }} />
               <div className="flex justify-center gap-4 flex-wrap">
-                {socialIcons.map(({ icon: Icon, url, label }) => (
+                {socialIcons.map(({ icon: Icon, url, label }, i) => (
                   <a
                     key={label}
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="text-textSecondary hover:text-white transition-all duration-300
-                               hover:scale-110 text-xl"
+                    className="transition-all duration-300 hover:scale-110 text-xl"
+                    style={{ color: '#94A3B8' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = neonColors[i % neonColors.length]}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#94A3B8'}
                   >
                     <Icon />
                   </a>
@@ -94,4 +117,3 @@ const MobileDrawer = ({ isOpen, onClose }) => {
 };
 
 export default MobileDrawer;
-
