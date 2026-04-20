@@ -78,7 +78,7 @@ export const CERTIFICATIONS = [
     {
         name: 'Generative AI Leader Certification',
         issuer: 'Google',
-        date: '2024',
+        date: 'Date issued: December 03, 2025 | Expires: December 03, 2028',
         credentialUrl: 'https://www.credly.com/badges/1752e0b7-85a2-4a4b-bc4f-f33162dd6529/linked_in_profile',
         logo: '/assets/images/google-ai-cert.png',
         description: 'Advanced certification in Generative AI technologies and leadership',
