@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { PERSONAL_INFO } from '../../config/constants';
 import { scrollToSection } from '../../utils/scrollUtils';
+import { useMouseParallax } from '../../hooks/useMouseParallax';
 
 const Introduction = () => {
+  const { rotateX, rotateY } = useMouseParallax(0.03);
+
   return (
     <div className="min-h-[85vh] flex flex-col justify-center relative overflow-hidden">
       {/* Decorative blurred orbs */}
@@ -117,12 +120,22 @@ const Introduction = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="order-1 md:order-2 relative z-10 flex justify-center"
         >
-          <motion.div
-            animate={{ y: [0, -15, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-            className="relative"
+          <div
+            className="hero-3d-stage"
+            style={{
+              '--hero-rotate-x': `${rotateX}deg`,
+              '--hero-rotate-y': `${rotateY}deg`,
+            }}
           >
-            {/* Glowing rings behind photo */}
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+              className="relative"
+            >
+              <div className="hero-3d-depth-card" aria-hidden="true" />
+              <div className="hero-3d-grid" aria-hidden="true" />
+
+              {/* Glowing rings behind photo */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
@@ -177,8 +190,9 @@ const Introduction = () => {
                   {emoji}
                 </motion.div>
               );
-            })}
-          </motion.div>
+              })}
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 

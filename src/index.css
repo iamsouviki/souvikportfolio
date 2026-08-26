@@ -436,6 +436,55 @@
   }
 }
 
+/* ===== HERO 3D STAGE ===== */
+.hero-3d-stage {
+  --hero-rotate-x: 0deg;
+  --hero-rotate-y: 0deg;
+  position: relative;
+  transform: perspective(900px) rotateX(var(--hero-rotate-x)) rotateY(var(--hero-rotate-y));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease-out;
+  will-change: transform;
+}
+
+.hero-3d-depth-card,
+.hero-3d-grid {
+  position: absolute;
+  inset: -1.5rem;
+  border-radius: 2rem;
+  pointer-events: none;
+}
+
+.hero-3d-depth-card {
+  transform: translateZ(-28px) rotate(-8deg) scale(0.92);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: linear-gradient(145deg, rgba(0, 212, 255, 0.08), rgba(139, 92, 246, 0.03) 55%, transparent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 0 30px rgba(139, 92, 246, 0.08);
+}
+
+.hero-3d-grid {
+  inset: 1rem -2.5rem -3.5rem;
+  transform: perspective(500px) rotateX(62deg) translateZ(-46px);
+  transform-origin: center bottom;
+  opacity: 0.35;
+  background-image: linear-gradient(rgba(0, 212, 255, 0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.18) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, transparent, black 45%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-3d-stage,
+  .hero-3d-stage * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .hero-3d-stage {
+    transform: none !important;
+  }
+}
+
 /* ===== SCROLLBAR STYLING ===== */
 ::-webkit-scrollbar {
   width: 6px;
